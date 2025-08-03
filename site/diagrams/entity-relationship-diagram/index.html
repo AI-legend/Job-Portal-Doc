@@ -1,0 +1,1674 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Comprehensive documentation for the AI-powered job seeker platform with dual user support, CV builder, and workflow automation" name="description"/>
+<meta content="AI-legend" name="author"/>
+<link href="https://ai-legend.github.io/Job-Portal-Doc/diagrams/entity-relationship-diagram/" rel="canonical"/>
+<link href="../data-flow-diagram/" rel="prev"/>
+<link href="../workflow-diagrams/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.16" name="generator"/>
+<title>Entity Relationship Diagrams - AI-Powered Job Seeker Platform</title>
+<link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="blue" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#entity-relationship-diagrams-erd">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="AI-Powered Job Seeker Platform" class="md-header__button md-logo" data-md-component="logo" href="../.." title="AI-Powered Job Seeker Platform">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            AI-Powered Job Seeker Platform
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Entity Relationship Diagrams
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/AI-legend/Job-Portal-Doc" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2" fill="currentColor"></path></svg>
+</div>
+<div class="md-source__repository">
+    AI-legend/Job-Portal-Doc
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../architecture/">
+          
+  
+  
+  Architecture
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../api/">
+        
+  
+  
+    
+  
+  API Documentation
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../deployment/">
+        
+  
+  
+    
+  
+  Deployment
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../development/">
+        
+  
+  
+    
+  
+  Development
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Visual Documentation
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../PROJECT_MILESTONES/">
+          
+  
+  
+  Project Planning
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="AI-Powered Job Seeker Platform" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="AI-Powered Job Seeker Platform">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    AI-Powered Job Seeker Platform
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/AI-legend/Job-Portal-Doc" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2" fill="currentColor"></path></svg>
+</div>
+<div class="md-source__repository">
+    AI-legend/Job-Portal-Doc
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Architecture
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/backend/">
+<span class="md-ellipsis">
+    Backend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/workflow/">
+<span class="md-ellipsis">
+    Workflow
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../api/">
+<span class="md-ellipsis">
+    API Documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../deployment/">
+<span class="md-ellipsis">
+    Deployment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../development/">
+<span class="md-ellipsis">
+    Development
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-ellipsis">
+    Visual Documentation
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Visual Documentation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../data-flow-diagram/">
+<span class="md-ellipsis">
+    Data Flow Diagrams
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Entity Relationship Diagrams
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Entity Relationship Diagrams
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#table-of-contents">
+<span class="md-ellipsis">
+      Table of Contents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptual-erd">
+<span class="md-ellipsis">
+      Conceptual ERD
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logical-erd">
+<span class="md-ellipsis">
+      Logical ERD
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#physical-database-schema">
+<span class="md-ellipsis">
+      Physical Database Schema
+    </span>
+</a>
+<nav aria-label="Physical Database Schema" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mongodb-schema-primary-database">
+<span class="md-ellipsis">
+      MongoDB Schema (Primary Database)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#postgresql-analytics-schema">
+<span class="md-ellipsis">
+      PostgreSQL Analytics Schema
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#entity-descriptions">
+<span class="md-ellipsis">
+      Entity Descriptions
+    </span>
+</a>
+<nav aria-label="Entity Descriptions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-entities">
+<span class="md-ellipsis">
+      Core Entities
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#supporting-entities">
+<span class="md-ellipsis">
+      Supporting Entities
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analytics-entities">
+<span class="md-ellipsis">
+      Analytics Entities
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relationship-descriptions">
+<span class="md-ellipsis">
+      Relationship Descriptions
+    </span>
+</a>
+<nav aria-label="Relationship Descriptions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#primary-relationships">
+<span class="md-ellipsis">
+      Primary Relationships
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#junction-tables">
+<span class="md-ellipsis">
+      Junction Tables
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#constraints-and-rules">
+<span class="md-ellipsis">
+      Constraints and Rules
+    </span>
+</a>
+<nav aria-label="Constraints and Rules" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#business-rules">
+<span class="md-ellipsis">
+      Business Rules
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-integrity">
+<span class="md-ellipsis">
+      Data Integrity
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance-considerations">
+<span class="md-ellipsis">
+      Performance Considerations
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../workflow-diagrams/">
+<span class="md-ellipsis">
+    Workflow Diagrams
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../architecture-diagrams/">
+<span class="md-ellipsis">
+    Architecture Diagrams
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Project Planning
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Project Planning
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../PROJECT_MILESTONES/">
+<span class="md-ellipsis">
+    Milestones
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../TECH_STACK/">
+<span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#table-of-contents">
+<span class="md-ellipsis">
+      Table of Contents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#conceptual-erd">
+<span class="md-ellipsis">
+      Conceptual ERD
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#logical-erd">
+<span class="md-ellipsis">
+      Logical ERD
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#physical-database-schema">
+<span class="md-ellipsis">
+      Physical Database Schema
+    </span>
+</a>
+<nav aria-label="Physical Database Schema" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mongodb-schema-primary-database">
+<span class="md-ellipsis">
+      MongoDB Schema (Primary Database)
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#postgresql-analytics-schema">
+<span class="md-ellipsis">
+      PostgreSQL Analytics Schema
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#entity-descriptions">
+<span class="md-ellipsis">
+      Entity Descriptions
+    </span>
+</a>
+<nav aria-label="Entity Descriptions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#core-entities">
+<span class="md-ellipsis">
+      Core Entities
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#supporting-entities">
+<span class="md-ellipsis">
+      Supporting Entities
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#analytics-entities">
+<span class="md-ellipsis">
+      Analytics Entities
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#relationship-descriptions">
+<span class="md-ellipsis">
+      Relationship Descriptions
+    </span>
+</a>
+<nav aria-label="Relationship Descriptions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#primary-relationships">
+<span class="md-ellipsis">
+      Primary Relationships
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#junction-tables">
+<span class="md-ellipsis">
+      Junction Tables
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#constraints-and-rules">
+<span class="md-ellipsis">
+      Constraints and Rules
+    </span>
+</a>
+<nav aria-label="Constraints and Rules" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#business-rules">
+<span class="md-ellipsis">
+      Business Rules
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-integrity">
+<span class="md-ellipsis">
+      Data Integrity
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance-considerations">
+<span class="md-ellipsis">
+      Performance Considerations
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/AI-legend/Job-Portal-Doc/edit/main/docs/diagrams/entity-relationship-diagram.md" rel="edit" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/AI-legend/Job-Portal-Doc/raw/main/docs/diagrams/entity-relationship-diagram.md" title="View source of this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="entity-relationship-diagrams-erd">Entity Relationship Diagrams (ERD)</h1>
+<h2 id="overview">Overview</h2>
+<p>This document contains comprehensive Entity Relationship Diagrams for the AI-Powered Job Seeker Platform, showing the data model at conceptual, logical, and physical levels.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#conceptual-erd">Conceptual ERD</a></li>
+<li><a href="#logical-erd">Logical ERD</a></li>
+<li><a href="#physical-database-schema">Physical Database Schema</a></li>
+<li><a href="#mongodb-collections">MongoDB Collections</a></li>
+<li><a href="#postgresql-analytics-schema">PostgreSQL Analytics Schema</a></li>
+<li><a href="#entity-descriptions">Entity Descriptions</a></li>
+<li><a href="#relationship-descriptions">Relationship Descriptions</a></li>
+</ol>
+<h2 id="conceptual-erd">Conceptual ERD</h2>
+<p>The conceptual ERD shows the high-level entities and their relationships without implementation details.</p>
+<pre class="mermaid"><code>erDiagram
+    USER {
+        string user_id PK
+        string email
+        string name
+        string role
+        datetime created_at
+    }
+
+    PROFILE {
+        string profile_id PK
+        string user_id FK
+        object personal_info
+        object preferences
+        object settings
+    }
+
+    CV {
+        string cv_id PK
+        string user_id FK
+        string title
+        object sections
+        string template_id FK
+        int version
+        datetime created_at
+    }
+
+    TEMPLATE {
+        string template_id PK
+        string name
+        object structure
+        string preview_url
+        boolean is_active
+    }
+
+    JOB {
+        string job_id PK
+        string posted_by FK
+        string company_id FK
+        string title
+        text description
+        array requirements
+        object location
+        object salary
+        datetime posted_at
+    }
+
+    COMPANY {
+        string company_id PK
+        string name
+        text description
+        string industry
+        object location
+        string website
+    }
+
+    APPLICATION {
+        string application_id PK
+        string user_id FK
+        string job_id FK
+        string cv_id FK
+        string status
+        text cover_letter
+        datetime applied_at
+        datetime updated_at
+    }
+
+    SKILL {
+        string skill_id PK
+        string name
+        string category
+        array synonyms
+        string level
+    }
+
+    AI_ANALYSIS {
+        string analysis_id PK
+        string entity_type
+        string entity_id FK
+        object analysis_data
+        float confidence_score
+        datetime created_at
+    }
+
+    NOTIFICATION {
+        string notification_id PK
+        string user_id FK
+        string type
+        object content
+        string status
+        datetime sent_at
+    }
+
+    INTERVIEW {
+        string interview_id PK
+        string application_id FK
+        datetime scheduled_at
+        string type
+        string status
+        object details
+    }
+
+    %% Relationships
+    USER ||--|| PROFILE : has
+    USER ||--o{ CV : creates
+    USER ||--o{ APPLICATION : submits
+    USER ||--o{ JOB : posts
+    USER ||--o{ NOTIFICATION : receives
+
+    CV }o--|| TEMPLATE : uses
+    CV ||--o{ APPLICATION : attached_to
+    CV ||--o{ AI_ANALYSIS : analyzed_by
+
+    JOB ||--o{ APPLICATION : receives
+    JOB }o--|| COMPANY : belongs_to
+    JOB ||--o{ AI_ANALYSIS : analyzed_by
+
+    APPLICATION ||--o| INTERVIEW : may_have
+
+    CV }o--o{ SKILL : contains
+    JOB }o--o{ SKILL : requires</code></pre>
+<h2 id="logical-erd">Logical ERD</h2>
+<p>The logical ERD includes attributes, data types, and detailed relationships.</p>
+<pre class="mermaid"><code>erDiagram
+    USERS {
+        ObjectId _id PK
+        string email UK
+        string password_hash
+        string name
+        enum role "seeker|recruiter|admin"
+        object profile
+        object preferences
+        boolean is_active
+        datetime created_at
+        datetime updated_at
+        datetime last_login
+    }
+
+    CVS {
+        ObjectId _id PK
+        ObjectId user_id FK
+        string title
+        object personal_info
+        array experience
+        array education
+        array skills
+        array certifications
+        array projects
+        ObjectId template_id FK
+        int version
+        boolean is_public
+        datetime created_at
+        datetime updated_at
+    }
+
+    JOBS {
+        ObjectId _id PK
+        ObjectId posted_by FK
+        ObjectId company_id FK
+        string title
+        text description
+        array requirements
+        array benefits
+        object location
+        object salary_range
+        enum employment_type "full-time|part-time|contract|remote"
+        enum experience_level "entry|mid|senior|executive"
+        array tags
+        enum status "active|paused|closed|draft"
+        int view_count
+        datetime posted_at
+        datetime expires_at
+        datetime updated_at
+    }
+
+    APPLICATIONS {
+        ObjectId _id PK
+        ObjectId user_id FK
+        ObjectId job_id FK
+        ObjectId cv_id FK
+        enum status "pending|reviewed|shortlisted|rejected|withdrawn"
+        text cover_letter
+        array additional_documents
+        object recruiter_notes
+        float match_score
+        boolean is_auto_applied
+        datetime applied_at
+        datetime reviewed_at
+        datetime updated_at
+    }
+
+    COMPANIES {
+        ObjectId _id PK
+        string name UK
+        text description
+        string industry
+        object location
+        string website
+        string logo_url
+        object social_links
+        int employee_count
+        string founded_year
+        array benefits
+        float rating
+        datetime created_at
+        datetime updated_at
+    }
+
+    TEMPLATES {
+        ObjectId _id PK
+        string name UK
+        object structure
+        string preview_url
+        string category
+        array color_schemes
+        boolean is_premium
+        boolean is_active
+        int usage_count
+        datetime created_at
+        datetime updated_at
+    }
+
+    SKILLS {
+        ObjectId _id PK
+        string name UK
+        string category
+        array synonyms
+        enum level "beginner|intermediate|advanced|expert"
+        string description
+        int popularity_score
+        datetime created_at
+    }
+
+    CV_SKILLS {
+        ObjectId _id PK
+        ObjectId cv_id FK
+        ObjectId skill_id FK
+        enum proficiency "basic|intermediate|advanced|expert"
+        int years_experience
+        boolean is_verified
+    }
+
+    JOB_SKILLS {
+        ObjectId _id PK
+        ObjectId job_id FK
+        ObjectId skill_id FK
+        enum requirement_level "required|preferred|nice-to-have"
+        int min_years_required
+    }
+
+    AI_ANALYSES {
+        ObjectId _id PK
+        enum entity_type "cv|job|application"
+        ObjectId entity_id FK
+        enum analysis_type "skill_extraction|job_matching|cv_optimization"
+        object analysis_data
+        float confidence_score
+        string model_version
+        datetime created_at
+    }
+
+    NOTIFICATIONS {
+        ObjectId _id PK
+        ObjectId user_id FK
+        enum type "job_alert|application_update|message|system"
+        string title
+        text content
+        enum priority "low|medium|high|urgent"
+        enum status "pending|sent|delivered|failed|read"
+        enum delivery_method "email|sms|push|in_app"
+        object metadata
+        datetime scheduled_at
+        datetime sent_at
+        datetime read_at
+    }
+
+    INTERVIEWS {
+        ObjectId _id PK
+        ObjectId application_id FK
+        datetime scheduled_at
+        enum type "phone|video|in_person|technical"
+        enum status "scheduled|completed|cancelled|rescheduled"
+        string meeting_link
+        text notes
+        object feedback
+        datetime created_at
+        datetime updated_at
+    }
+
+    SAVED_JOBS {
+        ObjectId _id PK
+        ObjectId user_id FK
+        ObjectId job_id FK
+        text notes
+        datetime saved_at
+    }
+
+    JOB_VIEWS {
+        ObjectId _id PK
+        ObjectId user_id FK
+        ObjectId job_id FK
+        string ip_address
+        string user_agent
+        datetime viewed_at
+    }
+
+    %% Relationships
+    USERS ||--o{ CVS : creates
+    USERS ||--o{ APPLICATIONS : submits
+    USERS ||--o{ JOBS : posts
+    USERS ||--o{ NOTIFICATIONS : receives
+    USERS ||--o{ SAVED_JOBS : saves
+    USERS ||--o{ JOB_VIEWS : views
+
+    CVS }o--|| TEMPLATES : uses
+    CVS ||--o{ APPLICATIONS : used_in
+    CVS ||--o{ CV_SKILLS : has
+    CVS ||--o{ AI_ANALYSES : analyzed
+
+    JOBS }o--|| COMPANIES : belongs_to
+    JOBS ||--o{ APPLICATIONS : receives
+    JOBS ||--o{ JOB_SKILLS : requires
+    JOBS ||--o{ SAVED_JOBS : saved_as
+    JOBS ||--o{ JOB_VIEWS : viewed_as
+    JOBS ||--o{ AI_ANALYSES : analyzed
+
+    APPLICATIONS ||--o| INTERVIEWS : may_have
+    APPLICATIONS ||--o{ AI_ANALYSES : analyzed
+
+    SKILLS ||--o{ CV_SKILLS : linked_to
+    SKILLS ||--o{ JOB_SKILLS : required_by</code></pre>
+<h2 id="physical-database-schema">Physical Database Schema</h2>
+<h3 id="mongodb-schema-primary-database">MongoDB Schema (Primary Database)</h3>
+<div class="language-javascript highlight"><pre><span></span><code><span id="__span-0-1"><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">// Users Collection</span>
+</span><span id="__span-0-2"><a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span>
+</span><span id="__span-0-3"><a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="nx">_id</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span>
+</span><span id="__span-0-4"><a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nx">unique</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-5"><a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="nx">password_hash</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-6"><a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-7"><a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">  </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="kr">enum</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'seeker'</span><span class="p">,</span><span class="w"> </span><span class="s1">'recruiter'</span><span class="p">,</span><span class="w"> </span><span class="s1">'admin'</span><span class="p">],</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-8"><a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">  </span><span class="nx">profile</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-9"><a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="nx">avatar_url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-10"><a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">    </span><span class="nx">phone</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-11"><a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-12"><a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">      </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-13"><a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">      </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-14"><a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w">      </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-15"><a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">      </span><span class="nx">coordinates</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">Number</span><span class="p">]</span><span class="w"> </span><span class="c1">// [longitude, latitude]</span>
+</span><span id="__span-0-16"><a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-0-17"><a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">    </span><span class="nx">bio</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-18"><a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">    </span><span class="nx">linkedin_url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-19"><a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">    </span><span class="nx">github_url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-20"><a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">    </span><span class="nx">portfolio_url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-21"><a href="#__codelineno-0-21" id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-22"><a href="#__codelineno-0-22" id="__codelineno-0-22" name="__codelineno-0-22"></a><span class="w">  </span><span class="nx">preferences</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-23"><a href="#__codelineno-0-23" id="__codelineno-0-23" name="__codelineno-0-23"></a><span class="w">    </span><span class="nx">job_alerts</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span>
+</span><span id="__span-0-24"><a href="#__codelineno-0-24" id="__codelineno-0-24" name="__codelineno-0-24"></a><span class="w">    </span><span class="nx">email_notifications</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span>
+</span><span id="__span-0-25"><a href="#__codelineno-0-25" id="__codelineno-0-25" name="__codelineno-0-25"></a><span class="w">    </span><span class="nx">sms_notifications</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span>
+</span><span id="__span-0-26"><a href="#__codelineno-0-26" id="__codelineno-0-26" name="__codelineno-0-26"></a><span class="w">    </span><span class="nx">preferred_locations</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+</span><span id="__span-0-27"><a href="#__codelineno-0-27" id="__codelineno-0-27" name="__codelineno-0-27"></a><span class="w">    </span><span class="nx">salary_expectations</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-28"><a href="#__codelineno-0-28" id="__codelineno-0-28" name="__codelineno-0-28"></a><span class="w">      </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-29"><a href="#__codelineno-0-29" id="__codelineno-0-29" name="__codelineno-0-29"></a><span class="w">      </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-30"><a href="#__codelineno-0-30" id="__codelineno-0-30" name="__codelineno-0-30"></a><span class="w">      </span><span class="nx">currency</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-31"><a href="#__codelineno-0-31" id="__codelineno-0-31" name="__codelineno-0-31"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-0-32"><a href="#__codelineno-0-32" id="__codelineno-0-32" name="__codelineno-0-32"></a><span class="w">    </span><span class="nx">work_authorization</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-33"><a href="#__codelineno-0-33" id="__codelineno-0-33" name="__codelineno-0-33"></a><span class="w">    </span><span class="nx">remote_preference</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-34"><a href="#__codelineno-0-34" id="__codelineno-0-34" name="__codelineno-0-34"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-35"><a href="#__codelineno-0-35" id="__codelineno-0-35" name="__codelineno-0-35"></a><span class="w">  </span><span class="nx">subscription</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-36"><a href="#__codelineno-0-36" id="__codelineno-0-36" name="__codelineno-0-36"></a><span class="w">    </span><span class="nx">plan</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-37"><a href="#__codelineno-0-37" id="__codelineno-0-37" name="__codelineno-0-37"></a><span class="w">    </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-38"><a href="#__codelineno-0-38" id="__codelineno-0-38" name="__codelineno-0-38"></a><span class="w">    </span><span class="nx">expires_at</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span>
+</span><span id="__span-0-39"><a href="#__codelineno-0-39" id="__codelineno-0-39" name="__codelineno-0-39"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-40"><a href="#__codelineno-0-40" id="__codelineno-0-40" name="__codelineno-0-40"></a><span class="w">  </span><span class="nx">is_active</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-41"><a href="#__codelineno-0-41" id="__codelineno-0-41" name="__codelineno-0-41"></a><span class="w">  </span><span class="nx">is_verified</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-42"><a href="#__codelineno-0-42" id="__codelineno-0-42" name="__codelineno-0-42"></a><span class="w">  </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-43"><a href="#__codelineno-0-43" id="__codelineno-0-43" name="__codelineno-0-43"></a><span class="w">  </span><span class="nx">updated_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-44"><a href="#__codelineno-0-44" id="__codelineno-0-44" name="__codelineno-0-44"></a><span class="w">  </span><span class="nx">last_login</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span>
+</span><span id="__span-0-45"><a href="#__codelineno-0-45" id="__codelineno-0-45" name="__codelineno-0-45"></a><span class="p">}</span>
+</span><span id="__span-0-46"><a href="#__codelineno-0-46" id="__codelineno-0-46" name="__codelineno-0-46"></a>
+</span><span id="__span-0-47"><a href="#__codelineno-0-47" id="__codelineno-0-47" name="__codelineno-0-47"></a><span class="c1">// CVs Collection</span>
+</span><span id="__span-0-48"><a href="#__codelineno-0-48" id="__codelineno-0-48" name="__codelineno-0-48"></a><span class="p">{</span>
+</span><span id="__span-0-49"><a href="#__codelineno-0-49" id="__codelineno-0-49" name="__codelineno-0-49"></a><span class="w">  </span><span class="nx">_id</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span>
+</span><span id="__span-0-50"><a href="#__codelineno-0-50" id="__codelineno-0-50" name="__codelineno-0-50"></a><span class="w">  </span><span class="nx">user_id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span><span class="w"> </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="s1">'User'</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-51"><a href="#__codelineno-0-51" id="__codelineno-0-51" name="__codelineno-0-51"></a><span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-52"><a href="#__codelineno-0-52" id="__codelineno-0-52" name="__codelineno-0-52"></a><span class="w">  </span><span class="nx">personal_info</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-53"><a href="#__codelineno-0-53" id="__codelineno-0-53" name="__codelineno-0-53"></a><span class="w">    </span><span class="nx">full_name</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-54"><a href="#__codelineno-0-54" id="__codelineno-0-54" name="__codelineno-0-54"></a><span class="w">    </span><span class="nx">email</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-55"><a href="#__codelineno-0-55" id="__codelineno-0-55" name="__codelineno-0-55"></a><span class="w">    </span><span class="nx">phone</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-56"><a href="#__codelineno-0-56" id="__codelineno-0-56" name="__codelineno-0-56"></a><span class="w">    </span><span class="nx">address</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-57"><a href="#__codelineno-0-57" id="__codelineno-0-57" name="__codelineno-0-57"></a><span class="w">    </span><span class="nx">linkedin</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-58"><a href="#__codelineno-0-58" id="__codelineno-0-58" name="__codelineno-0-58"></a><span class="w">    </span><span class="nx">portfolio</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-59"><a href="#__codelineno-0-59" id="__codelineno-0-59" name="__codelineno-0-59"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-60"><a href="#__codelineno-0-60" id="__codelineno-0-60" name="__codelineno-0-60"></a><span class="w">  </span><span class="nx">summary</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-61"><a href="#__codelineno-0-61" id="__codelineno-0-61" name="__codelineno-0-61"></a><span class="w">  </span><span class="nx">experience</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-62"><a href="#__codelineno-0-62" id="__codelineno-0-62" name="__codelineno-0-62"></a><span class="w">    </span><span class="nx">company</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-63"><a href="#__codelineno-0-63" id="__codelineno-0-63" name="__codelineno-0-63"></a><span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-64"><a href="#__codelineno-0-64" id="__codelineno-0-64" name="__codelineno-0-64"></a><span class="w">    </span><span class="nx">start_date</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-65"><a href="#__codelineno-0-65" id="__codelineno-0-65" name="__codelineno-0-65"></a><span class="w">    </span><span class="nx">end_date</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-66"><a href="#__codelineno-0-66" id="__codelineno-0-66" name="__codelineno-0-66"></a><span class="w">    </span><span class="nx">is_current</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span>
+</span><span id="__span-0-67"><a href="#__codelineno-0-67" id="__codelineno-0-67" name="__codelineno-0-67"></a><span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-68"><a href="#__codelineno-0-68" id="__codelineno-0-68" name="__codelineno-0-68"></a><span class="w">    </span><span class="nx">achievements</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+</span><span id="__span-0-69"><a href="#__codelineno-0-69" id="__codelineno-0-69" name="__codelineno-0-69"></a><span class="w">    </span><span class="nx">skills_used</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">]</span>
+</span><span id="__span-0-70"><a href="#__codelineno-0-70" id="__codelineno-0-70" name="__codelineno-0-70"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-71"><a href="#__codelineno-0-71" id="__codelineno-0-71" name="__codelineno-0-71"></a><span class="w">  </span><span class="nx">education</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-72"><a href="#__codelineno-0-72" id="__codelineno-0-72" name="__codelineno-0-72"></a><span class="w">    </span><span class="nx">institution</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-73"><a href="#__codelineno-0-73" id="__codelineno-0-73" name="__codelineno-0-73"></a><span class="w">    </span><span class="nx">degree</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-74"><a href="#__codelineno-0-74" id="__codelineno-0-74" name="__codelineno-0-74"></a><span class="w">    </span><span class="nx">field_of_study</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-75"><a href="#__codelineno-0-75" id="__codelineno-0-75" name="__codelineno-0-75"></a><span class="w">    </span><span class="nx">start_date</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-76"><a href="#__codelineno-0-76" id="__codelineno-0-76" name="__codelineno-0-76"></a><span class="w">    </span><span class="nx">end_date</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-77"><a href="#__codelineno-0-77" id="__codelineno-0-77" name="__codelineno-0-77"></a><span class="w">    </span><span class="nx">gpa</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-78"><a href="#__codelineno-0-78" id="__codelineno-0-78" name="__codelineno-0-78"></a><span class="w">    </span><span class="nx">achievements</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">]</span>
+</span><span id="__span-0-79"><a href="#__codelineno-0-79" id="__codelineno-0-79" name="__codelineno-0-79"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-80"><a href="#__codelineno-0-80" id="__codelineno-0-80" name="__codelineno-0-80"></a><span class="w">  </span><span class="nx">skills</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-81"><a href="#__codelineno-0-81" id="__codelineno-0-81" name="__codelineno-0-81"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-82"><a href="#__codelineno-0-82" id="__codelineno-0-82" name="__codelineno-0-82"></a><span class="w">    </span><span class="nx">level</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-83"><a href="#__codelineno-0-83" id="__codelineno-0-83" name="__codelineno-0-83"></a><span class="w">    </span><span class="nx">years_experience</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-84"><a href="#__codelineno-0-84" id="__codelineno-0-84" name="__codelineno-0-84"></a><span class="w">    </span><span class="nx">is_verified</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span>
+</span><span id="__span-0-85"><a href="#__codelineno-0-85" id="__codelineno-0-85" name="__codelineno-0-85"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-86"><a href="#__codelineno-0-86" id="__codelineno-0-86" name="__codelineno-0-86"></a><span class="w">  </span><span class="nx">certifications</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-87"><a href="#__codelineno-0-87" id="__codelineno-0-87" name="__codelineno-0-87"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-88"><a href="#__codelineno-0-88" id="__codelineno-0-88" name="__codelineno-0-88"></a><span class="w">    </span><span class="nx">issuer</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-89"><a href="#__codelineno-0-89" id="__codelineno-0-89" name="__codelineno-0-89"></a><span class="w">    </span><span class="nx">issue_date</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-90"><a href="#__codelineno-0-90" id="__codelineno-0-90" name="__codelineno-0-90"></a><span class="w">    </span><span class="nx">expiry_date</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-91"><a href="#__codelineno-0-91" id="__codelineno-0-91" name="__codelineno-0-91"></a><span class="w">    </span><span class="nx">credential_id</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-92"><a href="#__codelineno-0-92" id="__codelineno-0-92" name="__codelineno-0-92"></a><span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-93"><a href="#__codelineno-0-93" id="__codelineno-0-93" name="__codelineno-0-93"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-94"><a href="#__codelineno-0-94" id="__codelineno-0-94" name="__codelineno-0-94"></a><span class="w">  </span><span class="nx">projects</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-95"><a href="#__codelineno-0-95" id="__codelineno-0-95" name="__codelineno-0-95"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-96"><a href="#__codelineno-0-96" id="__codelineno-0-96" name="__codelineno-0-96"></a><span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-97"><a href="#__codelineno-0-97" id="__codelineno-0-97" name="__codelineno-0-97"></a><span class="w">    </span><span class="nx">technologies</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+</span><span id="__span-0-98"><a href="#__codelineno-0-98" id="__codelineno-0-98" name="__codelineno-0-98"></a><span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-99"><a href="#__codelineno-0-99" id="__codelineno-0-99" name="__codelineno-0-99"></a><span class="w">    </span><span class="nx">github_url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-100"><a href="#__codelineno-0-100" id="__codelineno-0-100" name="__codelineno-0-100"></a><span class="w">    </span><span class="nx">start_date</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-101"><a href="#__codelineno-0-101" id="__codelineno-0-101" name="__codelineno-0-101"></a><span class="w">    </span><span class="nx">end_date</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span>
+</span><span id="__span-0-102"><a href="#__codelineno-0-102" id="__codelineno-0-102" name="__codelineno-0-102"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-103"><a href="#__codelineno-0-103" id="__codelineno-0-103" name="__codelineno-0-103"></a><span class="w">  </span><span class="nx">languages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-104"><a href="#__codelineno-0-104" id="__codelineno-0-104" name="__codelineno-0-104"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-105"><a href="#__codelineno-0-105" id="__codelineno-0-105" name="__codelineno-0-105"></a><span class="w">    </span><span class="nx">proficiency</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-106"><a href="#__codelineno-0-106" id="__codelineno-0-106" name="__codelineno-0-106"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-107"><a href="#__codelineno-0-107" id="__codelineno-0-107" name="__codelineno-0-107"></a><span class="w">  </span><span class="nx">template_id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span><span class="w"> </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="s1">'Template'</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-108"><a href="#__codelineno-0-108" id="__codelineno-0-108" name="__codelineno-0-108"></a><span class="w">  </span><span class="nx">version</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-109"><a href="#__codelineno-0-109" id="__codelineno-0-109" name="__codelineno-0-109"></a><span class="w">  </span><span class="nx">is_public</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-110"><a href="#__codelineno-0-110" id="__codelineno-0-110" name="__codelineno-0-110"></a><span class="w">  </span><span class="nx">download_count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-111"><a href="#__codelineno-0-111" id="__codelineno-0-111" name="__codelineno-0-111"></a><span class="w">  </span><span class="nx">view_count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-112"><a href="#__codelineno-0-112" id="__codelineno-0-112" name="__codelineno-0-112"></a><span class="w">  </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-113"><a href="#__codelineno-0-113" id="__codelineno-0-113" name="__codelineno-0-113"></a><span class="w">  </span><span class="nx">updated_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-114"><a href="#__codelineno-0-114" id="__codelineno-0-114" name="__codelineno-0-114"></a><span class="p">}</span>
+</span><span id="__span-0-115"><a href="#__codelineno-0-115" id="__codelineno-0-115" name="__codelineno-0-115"></a>
+</span><span id="__span-0-116"><a href="#__codelineno-0-116" id="__codelineno-0-116" name="__codelineno-0-116"></a><span class="c1">// Jobs Collection</span>
+</span><span id="__span-0-117"><a href="#__codelineno-0-117" id="__codelineno-0-117" name="__codelineno-0-117"></a><span class="p">{</span>
+</span><span id="__span-0-118"><a href="#__codelineno-0-118" id="__codelineno-0-118" name="__codelineno-0-118"></a><span class="w">  </span><span class="nx">_id</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span>
+</span><span id="__span-0-119"><a href="#__codelineno-0-119" id="__codelineno-0-119" name="__codelineno-0-119"></a><span class="w">  </span><span class="nx">posted_by</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span><span class="w"> </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="s1">'User'</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-120"><a href="#__codelineno-0-120" id="__codelineno-0-120" name="__codelineno-0-120"></a><span class="w">  </span><span class="nx">company_id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span><span class="w"> </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="s1">'Company'</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-121"><a href="#__codelineno-0-121" id="__codelineno-0-121" name="__codelineno-0-121"></a><span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-122"><a href="#__codelineno-0-122" id="__codelineno-0-122" name="__codelineno-0-122"></a><span class="w">  </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-123"><a href="#__codelineno-0-123" id="__codelineno-0-123" name="__codelineno-0-123"></a><span class="w">  </span><span class="nx">requirements</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+</span><span id="__span-0-124"><a href="#__codelineno-0-124" id="__codelineno-0-124" name="__codelineno-0-124"></a><span class="w">  </span><span class="nx">responsibilities</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+</span><span id="__span-0-125"><a href="#__codelineno-0-125" id="__codelineno-0-125" name="__codelineno-0-125"></a><span class="w">  </span><span class="nx">benefits</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+</span><span id="__span-0-126"><a href="#__codelineno-0-126" id="__codelineno-0-126" name="__codelineno-0-126"></a><span class="w">  </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-127"><a href="#__codelineno-0-127" id="__codelineno-0-127" name="__codelineno-0-127"></a><span class="w">    </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-128"><a href="#__codelineno-0-128" id="__codelineno-0-128" name="__codelineno-0-128"></a><span class="w">    </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-129"><a href="#__codelineno-0-129" id="__codelineno-0-129" name="__codelineno-0-129"></a><span class="w">    </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-130"><a href="#__codelineno-0-130" id="__codelineno-0-130" name="__codelineno-0-130"></a><span class="w">    </span><span class="nx">coordinates</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">Number</span><span class="p">],</span>
+</span><span id="__span-0-131"><a href="#__codelineno-0-131" id="__codelineno-0-131" name="__codelineno-0-131"></a><span class="w">    </span><span class="nx">is_remote</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span>
+</span><span id="__span-0-132"><a href="#__codelineno-0-132" id="__codelineno-0-132" name="__codelineno-0-132"></a><span class="w">    </span><span class="nx">remote_type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="c1">// 'fully_remote', 'hybrid', 'occasional'</span>
+</span><span id="__span-0-133"><a href="#__codelineno-0-133" id="__codelineno-0-133" name="__codelineno-0-133"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-134"><a href="#__codelineno-0-134" id="__codelineno-0-134" name="__codelineno-0-134"></a><span class="w">  </span><span class="nx">salary_range</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-135"><a href="#__codelineno-0-135" id="__codelineno-0-135" name="__codelineno-0-135"></a><span class="w">    </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-136"><a href="#__codelineno-0-136" id="__codelineno-0-136" name="__codelineno-0-136"></a><span class="w">    </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-137"><a href="#__codelineno-0-137" id="__codelineno-0-137" name="__codelineno-0-137"></a><span class="w">    </span><span class="nx">currency</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-138"><a href="#__codelineno-0-138" id="__codelineno-0-138" name="__codelineno-0-138"></a><span class="w">    </span><span class="nx">period</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="w"> </span><span class="c1">// 'hourly', 'monthly', 'yearly'</span>
+</span><span id="__span-0-139"><a href="#__codelineno-0-139" id="__codelineno-0-139" name="__codelineno-0-139"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-140"><a href="#__codelineno-0-140" id="__codelineno-0-140" name="__codelineno-0-140"></a><span class="w">  </span><span class="nx">employment_type</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-141"><a href="#__codelineno-0-141" id="__codelineno-0-141" name="__codelineno-0-141"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-142"><a href="#__codelineno-0-142" id="__codelineno-0-142" name="__codelineno-0-142"></a><span class="w">    </span><span class="kr">enum</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'full-time'</span><span class="p">,</span><span class="w"> </span><span class="s1">'part-time'</span><span class="p">,</span><span class="w"> </span><span class="s1">'contract'</span><span class="p">,</span><span class="w"> </span><span class="s1">'temporary'</span><span class="p">,</span><span class="w"> </span><span class="s1">'internship'</span><span class="p">]</span>
+</span><span id="__span-0-143"><a href="#__codelineno-0-143" id="__codelineno-0-143" name="__codelineno-0-143"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-144"><a href="#__codelineno-0-144" id="__codelineno-0-144" name="__codelineno-0-144"></a><span class="w">  </span><span class="nx">experience_level</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-145"><a href="#__codelineno-0-145" id="__codelineno-0-145" name="__codelineno-0-145"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-146"><a href="#__codelineno-0-146" id="__codelineno-0-146" name="__codelineno-0-146"></a><span class="w">    </span><span class="kr">enum</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'entry'</span><span class="p">,</span><span class="w"> </span><span class="s1">'mid'</span><span class="p">,</span><span class="w"> </span><span class="s1">'senior'</span><span class="p">,</span><span class="w"> </span><span class="s1">'executive'</span><span class="p">]</span>
+</span><span id="__span-0-147"><a href="#__codelineno-0-147" id="__codelineno-0-147" name="__codelineno-0-147"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-148"><a href="#__codelineno-0-148" id="__codelineno-0-148" name="__codelineno-0-148"></a><span class="w">  </span><span class="nx">skills_required</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-149"><a href="#__codelineno-0-149" id="__codelineno-0-149" name="__codelineno-0-149"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-150"><a href="#__codelineno-0-150" id="__codelineno-0-150" name="__codelineno-0-150"></a><span class="w">    </span><span class="nx">level</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-151"><a href="#__codelineno-0-151" id="__codelineno-0-151" name="__codelineno-0-151"></a><span class="w">    </span><span class="nx">is_required</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span>
+</span><span id="__span-0-152"><a href="#__codelineno-0-152" id="__codelineno-0-152" name="__codelineno-0-152"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-153"><a href="#__codelineno-0-153" id="__codelineno-0-153" name="__codelineno-0-153"></a><span class="w">  </span><span class="nx">application_deadline</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-154"><a href="#__codelineno-0-154" id="__codelineno-0-154" name="__codelineno-0-154"></a><span class="w">  </span><span class="nx">tags</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+</span><span id="__span-0-155"><a href="#__codelineno-0-155" id="__codelineno-0-155" name="__codelineno-0-155"></a><span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-156"><a href="#__codelineno-0-156" id="__codelineno-0-156" name="__codelineno-0-156"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-157"><a href="#__codelineno-0-157" id="__codelineno-0-157" name="__codelineno-0-157"></a><span class="w">    </span><span class="kr">enum</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'draft'</span><span class="p">,</span><span class="w"> </span><span class="s1">'active'</span><span class="p">,</span><span class="w"> </span><span class="s1">'paused'</span><span class="p">,</span><span class="w"> </span><span class="s1">'closed'</span><span class="p">,</span><span class="w"> </span><span class="s1">'expired'</span><span class="p">],</span>
+</span><span id="__span-0-158"><a href="#__codelineno-0-158" id="__codelineno-0-158" name="__codelineno-0-158"></a><span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="s1">'active'</span>
+</span><span id="__span-0-159"><a href="#__codelineno-0-159" id="__codelineno-0-159" name="__codelineno-0-159"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-160"><a href="#__codelineno-0-160" id="__codelineno-0-160" name="__codelineno-0-160"></a><span class="w">  </span><span class="nx">external_source</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-161"><a href="#__codelineno-0-161" id="__codelineno-0-161" name="__codelineno-0-161"></a><span class="w">    </span><span class="nx">platform</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-162"><a href="#__codelineno-0-162" id="__codelineno-0-162" name="__codelineno-0-162"></a><span class="w">    </span><span class="nx">external_id</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-163"><a href="#__codelineno-0-163" id="__codelineno-0-163" name="__codelineno-0-163"></a><span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-164"><a href="#__codelineno-0-164" id="__codelineno-0-164" name="__codelineno-0-164"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-165"><a href="#__codelineno-0-165" id="__codelineno-0-165" name="__codelineno-0-165"></a><span class="w">  </span><span class="nx">view_count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-166"><a href="#__codelineno-0-166" id="__codelineno-0-166" name="__codelineno-0-166"></a><span class="w">  </span><span class="nx">application_count</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-167"><a href="#__codelineno-0-167" id="__codelineno-0-167" name="__codelineno-0-167"></a><span class="w">  </span><span class="nx">posted_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-168"><a href="#__codelineno-0-168" id="__codelineno-0-168" name="__codelineno-0-168"></a><span class="w">  </span><span class="nx">expires_at</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-169"><a href="#__codelineno-0-169" id="__codelineno-0-169" name="__codelineno-0-169"></a><span class="w">  </span><span class="nx">updated_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-170"><a href="#__codelineno-0-170" id="__codelineno-0-170" name="__codelineno-0-170"></a><span class="p">}</span>
+</span><span id="__span-0-171"><a href="#__codelineno-0-171" id="__codelineno-0-171" name="__codelineno-0-171"></a>
+</span><span id="__span-0-172"><a href="#__codelineno-0-172" id="__codelineno-0-172" name="__codelineno-0-172"></a><span class="c1">// Applications Collection</span>
+</span><span id="__span-0-173"><a href="#__codelineno-0-173" id="__codelineno-0-173" name="__codelineno-0-173"></a><span class="p">{</span>
+</span><span id="__span-0-174"><a href="#__codelineno-0-174" id="__codelineno-0-174" name="__codelineno-0-174"></a><span class="w">  </span><span class="nx">_id</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span>
+</span><span id="__span-0-175"><a href="#__codelineno-0-175" id="__codelineno-0-175" name="__codelineno-0-175"></a><span class="w">  </span><span class="nx">user_id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span><span class="w"> </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="s1">'User'</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-176"><a href="#__codelineno-0-176" id="__codelineno-0-176" name="__codelineno-0-176"></a><span class="w">  </span><span class="nx">job_id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span><span class="w"> </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="s1">'Job'</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-177"><a href="#__codelineno-0-177" id="__codelineno-0-177" name="__codelineno-0-177"></a><span class="w">  </span><span class="nx">cv_id</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span><span class="w"> </span><span class="nx">ref</span><span class="o">:</span><span class="w"> </span><span class="s1">'CV'</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-178"><a href="#__codelineno-0-178" id="__codelineno-0-178" name="__codelineno-0-178"></a><span class="w">  </span><span class="nx">status</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-179"><a href="#__codelineno-0-179" id="__codelineno-0-179" name="__codelineno-0-179"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-180"><a href="#__codelineno-0-180" id="__codelineno-0-180" name="__codelineno-0-180"></a><span class="w">    </span><span class="kr">enum</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'pending'</span><span class="p">,</span><span class="w"> </span><span class="s1">'reviewed'</span><span class="p">,</span><span class="w"> </span><span class="s1">'shortlisted'</span><span class="p">,</span><span class="w"> </span><span class="s1">'interviewed'</span><span class="p">,</span><span class="w"> </span><span class="s1">'offered'</span><span class="p">,</span><span class="w"> </span><span class="s1">'rejected'</span><span class="p">,</span><span class="w"> </span><span class="s1">'withdrawn'</span><span class="p">],</span>
+</span><span id="__span-0-181"><a href="#__codelineno-0-181" id="__codelineno-0-181" name="__codelineno-0-181"></a><span class="w">    </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="s1">'pending'</span>
+</span><span id="__span-0-182"><a href="#__codelineno-0-182" id="__codelineno-0-182" name="__codelineno-0-182"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-183"><a href="#__codelineno-0-183" id="__codelineno-0-183" name="__codelineno-0-183"></a><span class="w">  </span><span class="nx">cover_letter</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-184"><a href="#__codelineno-0-184" id="__codelineno-0-184" name="__codelineno-0-184"></a><span class="w">  </span><span class="nx">additional_documents</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-185"><a href="#__codelineno-0-185" id="__codelineno-0-185" name="__codelineno-0-185"></a><span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-186"><a href="#__codelineno-0-186" id="__codelineno-0-186" name="__codelineno-0-186"></a><span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-187"><a href="#__codelineno-0-187" id="__codelineno-0-187" name="__codelineno-0-187"></a><span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-188"><a href="#__codelineno-0-188" id="__codelineno-0-188" name="__codelineno-0-188"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-189"><a href="#__codelineno-0-189" id="__codelineno-0-189" name="__codelineno-0-189"></a><span class="w">  </span><span class="nx">questions_answers</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-190"><a href="#__codelineno-0-190" id="__codelineno-0-190" name="__codelineno-0-190"></a><span class="w">    </span><span class="nx">question</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-191"><a href="#__codelineno-0-191" id="__codelineno-0-191" name="__codelineno-0-191"></a><span class="w">    </span><span class="nx">answer</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-192"><a href="#__codelineno-0-192" id="__codelineno-0-192" name="__codelineno-0-192"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-193"><a href="#__codelineno-0-193" id="__codelineno-0-193" name="__codelineno-0-193"></a><span class="w">  </span><span class="nx">recruiter_notes</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-194"><a href="#__codelineno-0-194" id="__codelineno-0-194" name="__codelineno-0-194"></a><span class="w">    </span><span class="nx">note</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-195"><a href="#__codelineno-0-195" id="__codelineno-0-195" name="__codelineno-0-195"></a><span class="w">    </span><span class="nx">created_by</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span>
+</span><span id="__span-0-196"><a href="#__codelineno-0-196" id="__codelineno-0-196" name="__codelineno-0-196"></a><span class="w">    </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span>
+</span><span id="__span-0-197"><a href="#__codelineno-0-197" id="__codelineno-0-197" name="__codelineno-0-197"></a><span class="w">  </span><span class="p">}],</span>
+</span><span id="__span-0-198"><a href="#__codelineno-0-198" id="__codelineno-0-198" name="__codelineno-0-198"></a><span class="w">  </span><span class="nx">match_score</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-199"><a href="#__codelineno-0-199" id="__codelineno-0-199" name="__codelineno-0-199"></a><span class="w">  </span><span class="nx">ai_analysis</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-200"><a href="#__codelineno-0-200" id="__codelineno-0-200" name="__codelineno-0-200"></a><span class="w">    </span><span class="nx">compatibility_score</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-201"><a href="#__codelineno-0-201" id="__codelineno-0-201" name="__codelineno-0-201"></a><span class="w">    </span><span class="nx">skill_match</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-202"><a href="#__codelineno-0-202" id="__codelineno-0-202" name="__codelineno-0-202"></a><span class="w">    </span><span class="nx">experience_match</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-203"><a href="#__codelineno-0-203" id="__codelineno-0-203" name="__codelineno-0-203"></a><span class="w">    </span><span class="nx">location_match</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-204"><a href="#__codelineno-0-204" id="__codelineno-0-204" name="__codelineno-0-204"></a><span class="w">    </span><span class="nx">recommendations</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">]</span>
+</span><span id="__span-0-205"><a href="#__codelineno-0-205" id="__codelineno-0-205" name="__codelineno-0-205"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-206"><a href="#__codelineno-0-206" id="__codelineno-0-206" name="__codelineno-0-206"></a><span class="w">  </span><span class="nx">is_auto_applied</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-207"><a href="#__codelineno-0-207" id="__codelineno-0-207" name="__codelineno-0-207"></a><span class="w">  </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="c1">// 'platform', 'external', 'referral'</span>
+</span><span id="__span-0-208"><a href="#__codelineno-0-208" id="__codelineno-0-208" name="__codelineno-0-208"></a><span class="w">  </span><span class="nx">applied_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-209"><a href="#__codelineno-0-209" id="__codelineno-0-209" name="__codelineno-0-209"></a><span class="w">  </span><span class="nx">reviewed_at</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span>
+</span><span id="__span-0-210"><a href="#__codelineno-0-210" id="__codelineno-0-210" name="__codelineno-0-210"></a><span class="w">  </span><span class="nx">updated_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-211"><a href="#__codelineno-0-211" id="__codelineno-0-211" name="__codelineno-0-211"></a><span class="p">}</span>
+</span><span id="__span-0-212"><a href="#__codelineno-0-212" id="__codelineno-0-212" name="__codelineno-0-212"></a>
+</span><span id="__span-0-213"><a href="#__codelineno-0-213" id="__codelineno-0-213" name="__codelineno-0-213"></a><span class="c1">// Companies Collection</span>
+</span><span id="__span-0-214"><a href="#__codelineno-0-214" id="__codelineno-0-214" name="__codelineno-0-214"></a><span class="p">{</span>
+</span><span id="__span-0-215"><a href="#__codelineno-0-215" id="__codelineno-0-215" name="__codelineno-0-215"></a><span class="w">  </span><span class="nx">_id</span><span class="o">:</span><span class="w"> </span><span class="nx">ObjectId</span><span class="p">,</span>
+</span><span id="__span-0-216"><a href="#__codelineno-0-216" id="__codelineno-0-216" name="__codelineno-0-216"></a><span class="w">  </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span><span class="w"> </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">unique</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-217"><a href="#__codelineno-0-217" id="__codelineno-0-217" name="__codelineno-0-217"></a><span class="w">  </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-218"><a href="#__codelineno-0-218" id="__codelineno-0-218" name="__codelineno-0-218"></a><span class="w">  </span><span class="nx">industry</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-219"><a href="#__codelineno-0-219" id="__codelineno-0-219" name="__codelineno-0-219"></a><span class="w">  </span><span class="nx">location</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-220"><a href="#__codelineno-0-220" id="__codelineno-0-220" name="__codelineno-0-220"></a><span class="w">    </span><span class="nx">headquarters</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-221"><a href="#__codelineno-0-221" id="__codelineno-0-221" name="__codelineno-0-221"></a><span class="w">      </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-222"><a href="#__codelineno-0-222" id="__codelineno-0-222" name="__codelineno-0-222"></a><span class="w">      </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-223"><a href="#__codelineno-0-223" id="__codelineno-0-223" name="__codelineno-0-223"></a><span class="w">      </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-224"><a href="#__codelineno-0-224" id="__codelineno-0-224" name="__codelineno-0-224"></a><span class="w">    </span><span class="p">},</span>
+</span><span id="__span-0-225"><a href="#__codelineno-0-225" id="__codelineno-0-225" name="__codelineno-0-225"></a><span class="w">    </span><span class="nx">offices</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+</span><span id="__span-0-226"><a href="#__codelineno-0-226" id="__codelineno-0-226" name="__codelineno-0-226"></a><span class="w">      </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-227"><a href="#__codelineno-0-227" id="__codelineno-0-227" name="__codelineno-0-227"></a><span class="w">      </span><span class="nx">state</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-228"><a href="#__codelineno-0-228" id="__codelineno-0-228" name="__codelineno-0-228"></a><span class="w">      </span><span class="nx">country</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-229"><a href="#__codelineno-0-229" id="__codelineno-0-229" name="__codelineno-0-229"></a><span class="w">      </span><span class="nx">is_headquarters</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span>
+</span><span id="__span-0-230"><a href="#__codelineno-0-230" id="__codelineno-0-230" name="__codelineno-0-230"></a><span class="w">    </span><span class="p">}]</span>
+</span><span id="__span-0-231"><a href="#__codelineno-0-231" id="__codelineno-0-231" name="__codelineno-0-231"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-232"><a href="#__codelineno-0-232" id="__codelineno-0-232" name="__codelineno-0-232"></a><span class="w">  </span><span class="nx">website</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-233"><a href="#__codelineno-0-233" id="__codelineno-0-233" name="__codelineno-0-233"></a><span class="w">  </span><span class="nx">logo_url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-234"><a href="#__codelineno-0-234" id="__codelineno-0-234" name="__codelineno-0-234"></a><span class="w">  </span><span class="nx">cover_image_url</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-235"><a href="#__codelineno-0-235" id="__codelineno-0-235" name="__codelineno-0-235"></a><span class="w">  </span><span class="nx">social_links</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-236"><a href="#__codelineno-0-236" id="__codelineno-0-236" name="__codelineno-0-236"></a><span class="w">    </span><span class="nx">linkedin</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-237"><a href="#__codelineno-0-237" id="__codelineno-0-237" name="__codelineno-0-237"></a><span class="w">    </span><span class="nx">twitter</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-238"><a href="#__codelineno-0-238" id="__codelineno-0-238" name="__codelineno-0-238"></a><span class="w">    </span><span class="nx">facebook</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-239"><a href="#__codelineno-0-239" id="__codelineno-0-239" name="__codelineno-0-239"></a><span class="w">    </span><span class="nx">instagram</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span>
+</span><span id="__span-0-240"><a href="#__codelineno-0-240" id="__codelineno-0-240" name="__codelineno-0-240"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-0-241"><a href="#__codelineno-0-241" id="__codelineno-0-241" name="__codelineno-0-241"></a><span class="w">  </span><span class="nx">employee_count</span><span class="o">:</span><span class="w"> </span><span class="nb">String</span><span class="p">,</span>
+</span><span id="__span-0-242"><a href="#__codelineno-0-242" id="__codelineno-0-242" name="__codelineno-0-242"></a><span class="w">  </span><span class="nx">founded_year</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-243"><a href="#__codelineno-0-243" id="__codelineno-0-243" name="__codelineno-0-243"></a><span class="w">  </span><span class="nx">benefits</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+</span><span id="__span-0-244"><a href="#__codelineno-0-244" id="__codelineno-0-244" name="__codelineno-0-244"></a><span class="w">  </span><span class="nx">company_culture</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="nb">String</span><span class="p">],</span>
+</span><span id="__span-0-245"><a href="#__codelineno-0-245" id="__codelineno-0-245" name="__codelineno-0-245"></a><span class="w">  </span><span class="nx">rating</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-246"><a href="#__codelineno-0-246" id="__codelineno-0-246" name="__codelineno-0-246"></a><span class="w">  </span><span class="nx">review_count</span><span class="o">:</span><span class="w"> </span><span class="nb">Number</span><span class="p">,</span>
+</span><span id="__span-0-247"><a href="#__codelineno-0-247" id="__codelineno-0-247" name="__codelineno-0-247"></a><span class="w">  </span><span class="nx">is_verified</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Boolean</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-248"><a href="#__codelineno-0-248" id="__codelineno-0-248" name="__codelineno-0-248"></a><span class="w">  </span><span class="nx">created_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">},</span>
+</span><span id="__span-0-249"><a href="#__codelineno-0-249" id="__codelineno-0-249" name="__codelineno-0-249"></a><span class="w">  </span><span class="nx">updated_at</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">,</span><span class="w"> </span><span class="k">default</span><span class="o">:</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="w"> </span><span class="p">}</span>
+</span><span id="__span-0-250"><a href="#__codelineno-0-250" id="__codelineno-0-250" name="__codelineno-0-250"></a><span class="p">}</span>
+</span></code></pre></div>
+<h2 id="postgresql-analytics-schema">PostgreSQL Analytics Schema</h2>
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-1-1"><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">-- User Events Table</span>
+</span><span id="__span-1-2"><a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">user_events</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-3"><a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-1-4"><a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-5"><a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="n">event_type</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-6"><a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="n">event_data</span><span class="w"> </span><span class="n">JSONB</span><span class="p">,</span>
+</span><span id="__span-1-7"><a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="n">session_id</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+</span><span id="__span-1-8"><a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="n">ip_address</span><span class="w"> </span><span class="n">INET</span><span class="p">,</span>
+</span><span id="__span-1-9"><a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="n">user_agent</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+</span><span id="__span-1-10"><a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+</span><span id="__span-1-11"><a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="p">);</span>
+</span><span id="__span-1-12"><a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>
+</span><span id="__span-1-13"><a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="c1">-- Job Application Analytics</span>
+</span><span id="__span-1-14"><a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">job_application_analytics</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-15"><a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-1-16"><a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-17"><a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">    </span><span class="n">job_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-18"><a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a><span class="w">    </span><span class="n">application_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-19"><a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a><span class="w">    </span><span class="n">status</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-20"><a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a><span class="w">    </span><span class="n">match_score</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+</span><span id="__span-1-21"><a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a><span class="w">    </span><span class="k">source</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+</span><span id="__span-1-22"><a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a><span class="w">    </span><span class="n">time_to_apply</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="p">,</span>
+</span><span id="__span-1-23"><a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a><span class="w">    </span><span class="n">applied_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">(),</span>
+</span><span id="__span-1-24"><a href="#__codelineno-1-24" id="__codelineno-1-24" name="__codelineno-1-24"></a><span class="w">    </span><span class="n">updated_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+</span><span id="__span-1-25"><a href="#__codelineno-1-25" id="__codelineno-1-25" name="__codelineno-1-25"></a><span class="p">);</span>
+</span><span id="__span-1-26"><a href="#__codelineno-1-26" id="__codelineno-1-26" name="__codelineno-1-26"></a>
+</span><span id="__span-1-27"><a href="#__codelineno-1-27" id="__codelineno-1-27" name="__codelineno-1-27"></a><span class="c1">-- CV Analytics</span>
+</span><span id="__span-1-28"><a href="#__codelineno-1-28" id="__codelineno-1-28" name="__codelineno-1-28"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">cv_analytics</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-29"><a href="#__codelineno-1-29" id="__codelineno-1-29" name="__codelineno-1-29"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-1-30"><a href="#__codelineno-1-30" id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="w">    </span><span class="n">cv_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-31"><a href="#__codelineno-1-31" id="__codelineno-1-31" name="__codelineno-1-31"></a><span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-32"><a href="#__codelineno-1-32" id="__codelineno-1-32" name="__codelineno-1-32"></a><span class="w">    </span><span class="n">view_count</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-33"><a href="#__codelineno-1-33" id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="w">    </span><span class="n">download_count</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-34"><a href="#__codelineno-1-34" id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="w">    </span><span class="n">share_count</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-35"><a href="#__codelineno-1-35" id="__codelineno-1-35" name="__codelineno-1-35"></a><span class="w">    </span><span class="n">last_updated</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+</span><span id="__span-1-36"><a href="#__codelineno-1-36" id="__codelineno-1-36" name="__codelineno-1-36"></a><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+</span><span id="__span-1-37"><a href="#__codelineno-1-37" id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="p">);</span>
+</span><span id="__span-1-38"><a href="#__codelineno-1-38" id="__codelineno-1-38" name="__codelineno-1-38"></a>
+</span><span id="__span-1-39"><a href="#__codelineno-1-39" id="__codelineno-1-39" name="__codelineno-1-39"></a><span class="c1">-- Job Performance Analytics</span>
+</span><span id="__span-1-40"><a href="#__codelineno-1-40" id="__codelineno-1-40" name="__codelineno-1-40"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">job_performance_analytics</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-41"><a href="#__codelineno-1-41" id="__codelineno-1-41" name="__codelineno-1-41"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-1-42"><a href="#__codelineno-1-42" id="__codelineno-1-42" name="__codelineno-1-42"></a><span class="w">    </span><span class="n">job_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-43"><a href="#__codelineno-1-43" id="__codelineno-1-43" name="__codelineno-1-43"></a><span class="w">    </span><span class="n">company_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-44"><a href="#__codelineno-1-44" id="__codelineno-1-44" name="__codelineno-1-44"></a><span class="w">    </span><span class="n">view_count</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-45"><a href="#__codelineno-1-45" id="__codelineno-1-45" name="__codelineno-1-45"></a><span class="w">    </span><span class="n">application_count</span><span class="w"> </span><span class="nb">INTEGER</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+</span><span id="__span-1-46"><a href="#__codelineno-1-46" id="__codelineno-1-46" name="__codelineno-1-46"></a><span class="w">    </span><span class="n">conversion_rate</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+</span><span id="__span-1-47"><a href="#__codelineno-1-47" id="__codelineno-1-47" name="__codelineno-1-47"></a><span class="w">    </span><span class="n">avg_time_to_apply</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="p">,</span>
+</span><span id="__span-1-48"><a href="#__codelineno-1-48" id="__codelineno-1-48" name="__codelineno-1-48"></a><span class="w">    </span><span class="n">posted_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+</span><span id="__span-1-49"><a href="#__codelineno-1-49" id="__codelineno-1-49" name="__codelineno-1-49"></a><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+</span><span id="__span-1-50"><a href="#__codelineno-1-50" id="__codelineno-1-50" name="__codelineno-1-50"></a><span class="p">);</span>
+</span><span id="__span-1-51"><a href="#__codelineno-1-51" id="__codelineno-1-51" name="__codelineno-1-51"></a>
+</span><span id="__span-1-52"><a href="#__codelineno-1-52" id="__codelineno-1-52" name="__codelineno-1-52"></a><span class="c1">-- AI Interaction Analytics</span>
+</span><span id="__span-1-53"><a href="#__codelineno-1-53" id="__codelineno-1-53" name="__codelineno-1-53"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ai_interaction_analytics</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-54"><a href="#__codelineno-1-54" id="__codelineno-1-54" name="__codelineno-1-54"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-1-55"><a href="#__codelineno-1-55" id="__codelineno-1-55" name="__codelineno-1-55"></a><span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-56"><a href="#__codelineno-1-56" id="__codelineno-1-56" name="__codelineno-1-56"></a><span class="w">    </span><span class="n">interaction_type</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-57"><a href="#__codelineno-1-57" id="__codelineno-1-57" name="__codelineno-1-57"></a><span class="w">    </span><span class="n">query</span><span class="w"> </span><span class="nb">TEXT</span><span class="p">,</span>
+</span><span id="__span-1-58"><a href="#__codelineno-1-58" id="__codelineno-1-58" name="__codelineno-1-58"></a><span class="w">    </span><span class="n">response_type</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+</span><span id="__span-1-59"><a href="#__codelineno-1-59" id="__codelineno-1-59" name="__codelineno-1-59"></a><span class="w">    </span><span class="n">tokens_used</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+</span><span id="__span-1-60"><a href="#__codelineno-1-60" id="__codelineno-1-60" name="__codelineno-1-60"></a><span class="w">    </span><span class="n">response_time_ms</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+</span><span id="__span-1-61"><a href="#__codelineno-1-61" id="__codelineno-1-61" name="__codelineno-1-61"></a><span class="w">    </span><span class="n">satisfaction_score</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+</span><span id="__span-1-62"><a href="#__codelineno-1-62" id="__codelineno-1-62" name="__codelineno-1-62"></a><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+</span><span id="__span-1-63"><a href="#__codelineno-1-63" id="__codelineno-1-63" name="__codelineno-1-63"></a><span class="p">);</span>
+</span><span id="__span-1-64"><a href="#__codelineno-1-64" id="__codelineno-1-64" name="__codelineno-1-64"></a>
+</span><span id="__span-1-65"><a href="#__codelineno-1-65" id="__codelineno-1-65" name="__codelineno-1-65"></a><span class="c1">-- Search Analytics</span>
+</span><span id="__span-1-66"><a href="#__codelineno-1-66" id="__codelineno-1-66" name="__codelineno-1-66"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">search_analytics</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-67"><a href="#__codelineno-1-67" id="__codelineno-1-67" name="__codelineno-1-67"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-1-68"><a href="#__codelineno-1-68" id="__codelineno-1-68" name="__codelineno-1-68"></a><span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="n">UUID</span><span class="p">,</span>
+</span><span id="__span-1-69"><a href="#__codelineno-1-69" id="__codelineno-1-69" name="__codelineno-1-69"></a><span class="w">    </span><span class="n">search_query</span><span class="w"> </span><span class="nb">TEXT</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-70"><a href="#__codelineno-1-70" id="__codelineno-1-70" name="__codelineno-1-70"></a><span class="w">    </span><span class="n">filters_applied</span><span class="w"> </span><span class="n">JSONB</span><span class="p">,</span>
+</span><span id="__span-1-71"><a href="#__codelineno-1-71" id="__codelineno-1-71" name="__codelineno-1-71"></a><span class="w">    </span><span class="n">results_count</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+</span><span id="__span-1-72"><a href="#__codelineno-1-72" id="__codelineno-1-72" name="__codelineno-1-72"></a><span class="w">    </span><span class="n">clicked_results</span><span class="w"> </span><span class="nb">INTEGER</span><span class="p">,</span>
+</span><span id="__span-1-73"><a href="#__codelineno-1-73" id="__codelineno-1-73" name="__codelineno-1-73"></a><span class="w">    </span><span class="n">search_session_id</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">),</span>
+</span><span id="__span-1-74"><a href="#__codelineno-1-74" id="__codelineno-1-74" name="__codelineno-1-74"></a><span class="w">    </span><span class="n">created_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+</span><span id="__span-1-75"><a href="#__codelineno-1-75" id="__codelineno-1-75" name="__codelineno-1-75"></a><span class="p">);</span>
+</span><span id="__span-1-76"><a href="#__codelineno-1-76" id="__codelineno-1-76" name="__codelineno-1-76"></a>
+</span><span id="__span-1-77"><a href="#__codelineno-1-77" id="__codelineno-1-77" name="__codelineno-1-77"></a><span class="c1">-- Notification Analytics</span>
+</span><span id="__span-1-78"><a href="#__codelineno-1-78" id="__codelineno-1-78" name="__codelineno-1-78"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">notification_analytics</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-79"><a href="#__codelineno-1-79" id="__codelineno-1-79" name="__codelineno-1-79"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-1-80"><a href="#__codelineno-1-80" id="__codelineno-1-80" name="__codelineno-1-80"></a><span class="w">    </span><span class="n">notification_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-81"><a href="#__codelineno-1-81" id="__codelineno-1-81" name="__codelineno-1-81"></a><span class="w">    </span><span class="n">user_id</span><span class="w"> </span><span class="n">UUID</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-82"><a href="#__codelineno-1-82" id="__codelineno-1-82" name="__codelineno-1-82"></a><span class="w">    </span><span class="k">type</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-83"><a href="#__codelineno-1-83" id="__codelineno-1-83" name="__codelineno-1-83"></a><span class="w">    </span><span class="n">delivery_method</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-84"><a href="#__codelineno-1-84" id="__codelineno-1-84" name="__codelineno-1-84"></a><span class="w">    </span><span class="n">status</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-85"><a href="#__codelineno-1-85" id="__codelineno-1-85" name="__codelineno-1-85"></a><span class="w">    </span><span class="n">sent_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+</span><span id="__span-1-86"><a href="#__codelineno-1-86" id="__codelineno-1-86" name="__codelineno-1-86"></a><span class="w">    </span><span class="n">delivered_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+</span><span id="__span-1-87"><a href="#__codelineno-1-87" id="__codelineno-1-87" name="__codelineno-1-87"></a><span class="w">    </span><span class="n">opened_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="p">,</span>
+</span><span id="__span-1-88"><a href="#__codelineno-1-88" id="__codelineno-1-88" name="__codelineno-1-88"></a><span class="w">    </span><span class="n">clicked_at</span><span class="w"> </span><span class="k">TIMESTAMP</span>
+</span><span id="__span-1-89"><a href="#__codelineno-1-89" id="__codelineno-1-89" name="__codelineno-1-89"></a><span class="p">);</span>
+</span><span id="__span-1-90"><a href="#__codelineno-1-90" id="__codelineno-1-90" name="__codelineno-1-90"></a>
+</span><span id="__span-1-91"><a href="#__codelineno-1-91" id="__codelineno-1-91" name="__codelineno-1-91"></a><span class="c1">-- System Performance Metrics</span>
+</span><span id="__span-1-92"><a href="#__codelineno-1-92" id="__codelineno-1-92" name="__codelineno-1-92"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">system_metrics</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-1-93"><a href="#__codelineno-1-93" id="__codelineno-1-93" name="__codelineno-1-93"></a><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">SERIAL</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="p">,</span>
+</span><span id="__span-1-94"><a href="#__codelineno-1-94" id="__codelineno-1-94" name="__codelineno-1-94"></a><span class="w">    </span><span class="n">metric_name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-95"><a href="#__codelineno-1-95" id="__codelineno-1-95" name="__codelineno-1-95"></a><span class="w">    </span><span class="n">metric_value</span><span class="w"> </span><span class="nb">DECIMAL</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+</span><span id="__span-1-96"><a href="#__codelineno-1-96" id="__codelineno-1-96" name="__codelineno-1-96"></a><span class="w">    </span><span class="n">metric_unit</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span>
+</span><span id="__span-1-97"><a href="#__codelineno-1-97" id="__codelineno-1-97" name="__codelineno-1-97"></a><span class="w">    </span><span class="n">service_name</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+</span><span id="__span-1-98"><a href="#__codelineno-1-98" id="__codelineno-1-98" name="__codelineno-1-98"></a><span class="w">    </span><span class="n">recorded_at</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">NOW</span><span class="p">()</span>
+</span><span id="__span-1-99"><a href="#__codelineno-1-99" id="__codelineno-1-99" name="__codelineno-1-99"></a><span class="p">);</span>
+</span><span id="__span-1-100"><a href="#__codelineno-1-100" id="__codelineno-1-100" name="__codelineno-1-100"></a>
+</span><span id="__span-1-101"><a href="#__codelineno-1-101" id="__codelineno-1-101" name="__codelineno-1-101"></a><span class="c1">-- Indexes for better performance</span>
+</span><span id="__span-1-102"><a href="#__codelineno-1-102" id="__codelineno-1-102" name="__codelineno-1-102"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_user_events_user_id</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">user_events</span><span class="p">(</span><span class="n">user_id</span><span class="p">);</span>
+</span><span id="__span-1-103"><a href="#__codelineno-1-103" id="__codelineno-1-103" name="__codelineno-1-103"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_user_events_event_type</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">user_events</span><span class="p">(</span><span class="n">event_type</span><span class="p">);</span>
+</span><span id="__span-1-104"><a href="#__codelineno-1-104" id="__codelineno-1-104" name="__codelineno-1-104"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_user_events_created_at</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">user_events</span><span class="p">(</span><span class="n">created_at</span><span class="p">);</span>
+</span><span id="__span-1-105"><a href="#__codelineno-1-105" id="__codelineno-1-105" name="__codelineno-1-105"></a>
+</span><span id="__span-1-106"><a href="#__codelineno-1-106" id="__codelineno-1-106" name="__codelineno-1-106"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_job_app_analytics_user_id</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">job_application_analytics</span><span class="p">(</span><span class="n">user_id</span><span class="p">);</span>
+</span><span id="__span-1-107"><a href="#__codelineno-1-107" id="__codelineno-1-107" name="__codelineno-1-107"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_job_app_analytics_job_id</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">job_application_analytics</span><span class="p">(</span><span class="n">job_id</span><span class="p">);</span>
+</span><span id="__span-1-108"><a href="#__codelineno-1-108" id="__codelineno-1-108" name="__codelineno-1-108"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_job_app_analytics_applied_at</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">job_application_analytics</span><span class="p">(</span><span class="n">applied_at</span><span class="p">);</span>
+</span><span id="__span-1-109"><a href="#__codelineno-1-109" id="__codelineno-1-109" name="__codelineno-1-109"></a>
+</span><span id="__span-1-110"><a href="#__codelineno-1-110" id="__codelineno-1-110" name="__codelineno-1-110"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_search_analytics_user_id</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">search_analytics</span><span class="p">(</span><span class="n">user_id</span><span class="p">);</span>
+</span><span id="__span-1-111"><a href="#__codelineno-1-111" id="__codelineno-1-111" name="__codelineno-1-111"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_search_analytics_created_at</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">search_analytics</span><span class="p">(</span><span class="n">created_at</span><span class="p">);</span>
+</span></code></pre></div>
+<h2 id="entity-descriptions">Entity Descriptions</h2>
+<h3 id="core-entities">Core Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Purpose</th>
+<th>Key Attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Users</strong></td>
+<td>Store user account information and profiles</td>
+<td>email, role, preferences, profile data</td>
+</tr>
+<tr>
+<td><strong>CVs</strong></td>
+<td>Store resume/CV data with versioning</td>
+<td>user_id, sections, template, version</td>
+</tr>
+<tr>
+<td><strong>Jobs</strong></td>
+<td>Store job postings from recruiters and external sources</td>
+<td>title, description, requirements, company</td>
+</tr>
+<tr>
+<td><strong>Applications</strong></td>
+<td>Track job applications and their status</td>
+<td>user_id, job_id, cv_id, status, match_score</td>
+</tr>
+<tr>
+<td><strong>Companies</strong></td>
+<td>Store company information and profiles</td>
+<td>name, description, industry, location</td>
+</tr>
+</tbody>
+</table>
+<h3 id="supporting-entities">Supporting Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Purpose</th>
+<th>Key Attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Templates</strong></td>
+<td>CV template designs and structures</td>
+<td>name, structure, preview, category</td>
+</tr>
+<tr>
+<td><strong>Skills</strong></td>
+<td>Standardized skill definitions</td>
+<td>name, category, synonyms, level</td>
+</tr>
+<tr>
+<td><strong>Notifications</strong></td>
+<td>System notifications and alerts</td>
+<td>user_id, type, content, delivery_method</td>
+</tr>
+<tr>
+<td><strong>Interviews</strong></td>
+<td>Interview scheduling and management</td>
+<td>application_id, datetime, type, status</td>
+</tr>
+<tr>
+<td><strong>AI_Analyses</strong></td>
+<td>AI analysis results and recommendations</td>
+<td>entity_type, analysis_data, confidence</td>
+</tr>
+</tbody>
+</table>
+<h3 id="analytics-entities">Analytics Entities</h3>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Purpose</th>
+<th>Key Attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>User_Events</strong></td>
+<td>Track user interactions and behavior</td>
+<td>user_id, event_type, session_id, timestamp</td>
+</tr>
+<tr>
+<td><strong>Job_Performance</strong></td>
+<td>Monitor job posting effectiveness</td>
+<td>job_id, view_count, application_count, conversion</td>
+</tr>
+<tr>
+<td><strong>Search_Analytics</strong></td>
+<td>Analyze search patterns and results</td>
+<td>query, filters, results_count, user_id</td>
+</tr>
+<tr>
+<td><strong>AI_Interactions</strong></td>
+<td>Track AI service usage and performance</td>
+<td>interaction_type, tokens_used, response_time</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relationship-descriptions">Relationship Descriptions</h2>
+<h3 id="primary-relationships">Primary Relationships</h3>
+<table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>User → CV</td>
+<td>One-to-Many</td>
+<td>A user can create multiple CVs</td>
+</tr>
+<tr>
+<td>User → Application</td>
+<td>One-to-Many</td>
+<td>A user can submit multiple applications</td>
+</tr>
+<tr>
+<td>Job → Application</td>
+<td>One-to-Many</td>
+<td>A job can receive multiple applications</td>
+</tr>
+<tr>
+<td>CV → Application</td>
+<td>One-to-Many</td>
+<td>A CV can be used for multiple applications</td>
+</tr>
+<tr>
+<td>Company → Job</td>
+<td>One-to-Many</td>
+<td>A company can post multiple jobs</td>
+</tr>
+</tbody>
+</table>
+<h3 id="junction-tables">Junction Tables</h3>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Purpose</th>
+<th>Entities Connected</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CV_Skills</strong></td>
+<td>Links CVs to skills with proficiency levels</td>
+<td>CV ↔ Skills</td>
+</tr>
+<tr>
+<td><strong>Job_Skills</strong></td>
+<td>Links jobs to required skills</td>
+<td>Job ↔ Skills</td>
+</tr>
+<tr>
+<td><strong>Saved_Jobs</strong></td>
+<td>Users' saved/bookmarked jobs</td>
+<td>User ↔ Job</td>
+</tr>
+<tr>
+<td><strong>Job_Views</strong></td>
+<td>Track job view history</td>
+<td>User ↔ Job</td>
+</tr>
+</tbody>
+</table>
+<h3 id="constraints-and-rules">Constraints and Rules</h3>
+<h4 id="business-rules">Business Rules</h4>
+<ol>
+<li><strong>User Registration</strong>: Email must be unique across all users</li>
+<li><strong>CV Ownership</strong>: Users can only access/modify their own CVs</li>
+<li><strong>Job Applications</strong>: Users cannot apply to the same job multiple times with different CVs</li>
+<li><strong>Company Jobs</strong>: Only recruiter users can post jobs for their companies</li>
+<li><strong>Application Status</strong>: Status transitions must follow defined workflow</li>
+</ol>
+<h4 id="data-integrity">Data Integrity</h4>
+<ol>
+<li><strong>Referential Integrity</strong>: All foreign keys must reference valid entities</li>
+<li><strong>Cascade Rules</strong>: Deleting a user cascades to their CVs and applications</li>
+<li><strong>Soft Deletes</strong>: Important entities use soft delete (is_active flag)</li>
+<li><strong>Audit Trail</strong>: All modifications tracked with timestamps</li>
+<li><strong>Version Control</strong>: CVs maintain version history</li>
+</ol>
+<h4 id="performance-considerations">Performance Considerations</h4>
+<ol>
+<li><strong>Indexing</strong>: Strategic indexes on frequently queried fields</li>
+<li><strong>Partitioning</strong>: Large tables partitioned by date (analytics)</li>
+<li><strong>Caching</strong>: Frequently accessed data cached in Redis</li>
+<li><strong>Aggregation</strong>: Pre-calculated metrics for dashboards</li>
+<li><strong>Archiving</strong>: Old data archived to maintain performance</li>
+</ol>
+<p>This comprehensive ERD documentation provides a complete view of the data model for the AI-Powered Job Seeker Platform, enabling proper database design, implementation, and maintenance.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2025 AI-legend
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/AI-legend/Job-Portal-Doc" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2" fill="currentColor"></path></svg>
+</a>
+<a class="md-social__link" href="https://linkedin.com/in/your-profile" rel="noopener" target="_blank" title="linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z" fill="currentColor"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "search.highlight", "search.share", "toc.follow", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+</body>
+</html>

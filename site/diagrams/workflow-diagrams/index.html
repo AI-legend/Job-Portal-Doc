@@ -1,0 +1,1662 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Comprehensive documentation for the AI-powered job seeker platform with dual user support, CV builder, and workflow automation" name="description"/>
+<meta content="AI-legend" name="author"/>
+<link href="https://ai-legend.github.io/Job-Portal-Doc/diagrams/workflow-diagrams/" rel="canonical"/>
+<link href="../entity-relationship-diagram/" rel="prev"/>
+<link href="../architecture-diagrams/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.16" name="generator"/>
+<title>Workflow Diagrams - AI-Powered Job Seeker Platform</title>
+<link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="blue" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#workflow-diagrams">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="AI-Powered Job Seeker Platform" class="md-header__button md-logo" data-md-component="logo" href="../.." title="AI-Powered Job Seeker Platform">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            AI-Powered Job Seeker Platform
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Workflow Diagrams
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/AI-legend/Job-Portal-Doc" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2" fill="currentColor"></path></svg>
+</div>
+<div class="md-source__repository">
+    AI-legend/Job-Portal-Doc
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../architecture/">
+          
+  
+  
+  Architecture
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../api/">
+        
+  
+  
+    
+  
+  API Documentation
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../deployment/">
+        
+  
+  
+    
+  
+  Deployment
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../development/">
+        
+  
+  
+    
+  
+  Development
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Visual Documentation
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../PROJECT_MILESTONES/">
+          
+  
+  
+  Project Planning
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="AI-Powered Job Seeker Platform" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="AI-Powered Job Seeker Platform">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    AI-Powered Job Seeker Platform
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/AI-legend/Job-Portal-Doc" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2" fill="currentColor"></path></svg>
+</div>
+<div class="md-source__repository">
+    AI-legend/Job-Portal-Doc
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Architecture
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/backend/">
+<span class="md-ellipsis">
+    Backend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/workflow/">
+<span class="md-ellipsis">
+    Workflow
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../api/">
+<span class="md-ellipsis">
+    API Documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../deployment/">
+<span class="md-ellipsis">
+    Deployment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../development/">
+<span class="md-ellipsis">
+    Development
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-ellipsis">
+    Visual Documentation
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Visual Documentation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../data-flow-diagram/">
+<span class="md-ellipsis">
+    Data Flow Diagrams
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../entity-relationship-diagram/">
+<span class="md-ellipsis">
+    Entity Relationship Diagrams
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Workflow Diagrams
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Workflow Diagrams
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#table-of-contents">
+<span class="md-ellipsis">
+      Table of Contents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-journey-workflows">
+<span class="md-ellipsis">
+      User Journey Workflows
+    </span>
+</a>
+<nav aria-label="User Journey Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-job-seeker-registration-onboarding">
+<span class="md-ellipsis">
+      1.1 Job Seeker Registration &amp; Onboarding
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-job-search-application-workflow">
+<span class="md-ellipsis">
+      1.2 Job Search &amp; Application Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-recruiter-job-posting-workflow">
+<span class="md-ellipsis">
+      1.3 Recruiter Job Posting Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#business-process-workflows">
+<span class="md-ellipsis">
+      Business Process Workflows
+    </span>
+</a>
+<nav aria-label="Business Process Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-application-review-process">
+<span class="md-ellipsis">
+      2.1 Application Review Process
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-cv-enhancement-process">
+<span class="md-ellipsis">
+      2.2 CV Enhancement Process
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technical-process-workflows">
+<span class="md-ellipsis">
+      Technical Process Workflows
+    </span>
+</a>
+<nav aria-label="Technical Process Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-system-authentication-flow">
+<span class="md-ellipsis">
+      3.1 System Authentication Flow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-job-scraping-processing-workflow">
+<span class="md-ellipsis">
+      3.2 Job Scraping &amp; Processing Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#n8n-automation-workflows">
+<span class="md-ellipsis">
+      n8n Automation Workflows
+    </span>
+</a>
+<nav aria-label="n8n Automation Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-auto-apply-workflow">
+<span class="md-ellipsis">
+      4.1 Auto-Apply Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-notification-orchestration-workflow">
+<span class="md-ellipsis">
+      4.2 Notification Orchestration Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai-processing-workflows">
+<span class="md-ellipsis">
+      AI Processing Workflows
+    </span>
+</a>
+<nav aria-label="AI Processing Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-cv-analysis-optimization-workflow">
+<span class="md-ellipsis">
+      5.1 CV Analysis &amp; Optimization Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-job-matching-algorithm-workflow">
+<span class="md-ellipsis">
+      5.2 Job Matching Algorithm Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-handling-workflows">
+<span class="md-ellipsis">
+      Error Handling Workflows
+    </span>
+</a>
+<nav aria-label="Error Handling Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61-system-error-recovery-workflow">
+<span class="md-ellipsis">
+      6.1 System Error Recovery Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-data-recovery-backup-workflow">
+<span class="md-ellipsis">
+      6.2 Data Recovery &amp; Backup Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../architecture-diagrams/">
+<span class="md-ellipsis">
+    Architecture Diagrams
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Project Planning
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Project Planning
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../PROJECT_MILESTONES/">
+<span class="md-ellipsis">
+    Milestones
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../TECH_STACK/">
+<span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#table-of-contents">
+<span class="md-ellipsis">
+      Table of Contents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-journey-workflows">
+<span class="md-ellipsis">
+      User Journey Workflows
+    </span>
+</a>
+<nav aria-label="User Journey Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11-job-seeker-registration-onboarding">
+<span class="md-ellipsis">
+      1.1 Job Seeker Registration &amp; Onboarding
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12-job-search-application-workflow">
+<span class="md-ellipsis">
+      1.2 Job Search &amp; Application Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13-recruiter-job-posting-workflow">
+<span class="md-ellipsis">
+      1.3 Recruiter Job Posting Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#business-process-workflows">
+<span class="md-ellipsis">
+      Business Process Workflows
+    </span>
+</a>
+<nav aria-label="Business Process Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#21-application-review-process">
+<span class="md-ellipsis">
+      2.1 Application Review Process
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#22-cv-enhancement-process">
+<span class="md-ellipsis">
+      2.2 CV Enhancement Process
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#technical-process-workflows">
+<span class="md-ellipsis">
+      Technical Process Workflows
+    </span>
+</a>
+<nav aria-label="Technical Process Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#31-system-authentication-flow">
+<span class="md-ellipsis">
+      3.1 System Authentication Flow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#32-job-scraping-processing-workflow">
+<span class="md-ellipsis">
+      3.2 Job Scraping &amp; Processing Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#n8n-automation-workflows">
+<span class="md-ellipsis">
+      n8n Automation Workflows
+    </span>
+</a>
+<nav aria-label="n8n Automation Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#41-auto-apply-workflow">
+<span class="md-ellipsis">
+      4.1 Auto-Apply Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#42-notification-orchestration-workflow">
+<span class="md-ellipsis">
+      4.2 Notification Orchestration Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#ai-processing-workflows">
+<span class="md-ellipsis">
+      AI Processing Workflows
+    </span>
+</a>
+<nav aria-label="AI Processing Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#51-cv-analysis-optimization-workflow">
+<span class="md-ellipsis">
+      5.1 CV Analysis &amp; Optimization Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#52-job-matching-algorithm-workflow">
+<span class="md-ellipsis">
+      5.2 Job Matching Algorithm Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#error-handling-workflows">
+<span class="md-ellipsis">
+      Error Handling Workflows
+    </span>
+</a>
+<nav aria-label="Error Handling Workflows" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#61-system-error-recovery-workflow">
+<span class="md-ellipsis">
+      6.1 System Error Recovery Workflow
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#62-data-recovery-backup-workflow">
+<span class="md-ellipsis">
+      6.2 Data Recovery &amp; Backup Workflow
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/AI-legend/Job-Portal-Doc/edit/main/docs/diagrams/workflow-diagrams.md" rel="edit" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/AI-legend/Job-Portal-Doc/raw/main/docs/diagrams/workflow-diagrams.md" title="View source of this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="workflow-diagrams">Workflow Diagrams</h1>
+<h2 id="overview">Overview</h2>
+<p>This document contains comprehensive workflow diagrams for the AI-Powered Job Seeker Platform, covering user journeys, business processes, technical workflows, and automation sequences.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#user-journey-workflows">User Journey Workflows</a></li>
+<li><a href="#business-process-workflows">Business Process Workflows</a></li>
+<li><a href="#technical-process-workflows">Technical Process Workflows</a></li>
+<li><a href="#n8n-automation-workflows">n8n Automation Workflows</a></li>
+<li><a href="#ai-processing-workflows">AI Processing Workflows</a></li>
+<li><a href="#error-handling-workflows">Error Handling Workflows</a></li>
+</ol>
+<h2 id="user-journey-workflows">User Journey Workflows</h2>
+<h3 id="11-job-seeker-registration-onboarding">1.1 Job Seeker Registration &amp; Onboarding</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Landing Page] --&gt; B{User Type?}
+    B --&gt;|Job Seeker| C[Seeker Registration Form]
+    B --&gt;|Recruiter| D[Recruiter Registration Form]
+
+    C --&gt; E[Fill Basic Info]
+    E --&gt; F[Email Verification]
+    F --&gt; G{Email Verified?}
+    G --&gt;|No| H[Resend Verification]
+    H --&gt; F
+    G --&gt;|Yes| I[Profile Setup]
+
+    I --&gt; J[Upload Profile Picture]
+    J --&gt; K[Set Preferences]
+    K --&gt; L[Location &amp; Work Authorization]
+    L --&gt; M[CV Upload/Creation Choice]
+
+    M --&gt; N{Create New CV?}
+    N --&gt;|Yes| O[CV Builder Tutorial]
+    N --&gt;|No| P[Upload Existing CV]
+
+    O --&gt; Q[Create First CV]
+    P --&gt; R[AI CV Analysis]
+    Q --&gt; S[Dashboard Welcome]
+    R --&gt; S
+
+    S --&gt; T[Onboarding Complete]
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+
+    class A,T startEnd
+    class C,D,E,F,I,J,K,L,O,P,Q,S process
+    class B,G,N decision
+    class R ai</code></pre>
+<h3 id="12-job-search-application-workflow">1.2 Job Search &amp; Application Workflow</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Dashboard] --&gt; B[Job Search]
+    B --&gt; C[Set Search Criteria]
+    C --&gt; D[AI-Enhanced Search]
+    D --&gt; E[View Job Results]
+
+    E --&gt; F{Job Interesting?}
+    F --&gt;|No| G[Refine Search]
+    F --&gt;|Yes| H[View Job Details]
+
+    G --&gt; D
+    H --&gt; I[AI Match Analysis]
+    I --&gt; J{Good Match?}
+
+    J --&gt;|Low Match| K[Get AI Suggestions]
+    K --&gt; L[Improve CV/Skills]
+    L --&gt; M[Return to Search]
+    M --&gt; D
+
+    J --&gt;|Good Match| N[Save Job]
+    N --&gt; O{Apply Now?}
+    O --&gt;|Later| P[Add to Saved Jobs]
+    O --&gt;|Yes| Q[Start Application]
+
+    Q --&gt; R[Select CV Version]
+    R --&gt; S[AI Application Review]
+    S --&gt; T[Customize Cover Letter]
+    T --&gt; U[Review Application]
+    U --&gt; V{Submit?}
+
+    V --&gt;|No| W[Edit Application]
+    W --&gt; U
+    V --&gt;|Yes| X[Submit Application]
+
+    X --&gt; Y{Auto-Apply Enabled?}
+    Y --&gt;|Yes| Z[Queue for Auto-Apply]
+    Y --&gt;|No| AA[Manual Submission]
+
+    Z --&gt; BB[Application Tracking]
+    AA --&gt; BB
+    BB --&gt; CC[Notification Sent]
+
+    P --&gt; DD[Saved Jobs List]
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    classDef automation fill:#ffebee,stroke:#f44336,stroke-width:2px
+
+    class A,CC,DD startEnd
+    class B,C,E,H,N,P,Q,R,T,U,W,X,AA,BB process
+    class F,J,O,V,Y decision
+    class D,I,K,S ai
+    class Z automation</code></pre>
+<h3 id="13-recruiter-job-posting-workflow">1.3 Recruiter Job Posting Workflow</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Recruiter Dashboard] --&gt; B[Create Job Posting]
+    B --&gt; C[Job Information Form]
+    C --&gt; D[Company Selection]
+    D --&gt; E[Job Details Entry]
+
+    E --&gt; F[Job Description]
+    F --&gt; G[Requirements &amp; Skills]
+    G --&gt; H[Compensation Details]
+    H --&gt; I[Location &amp; Remote Options]
+    I --&gt; J[Application Settings]
+
+    J --&gt; K[AI Job Analysis]
+    K --&gt; L[Optimization Suggestions]
+    L --&gt; M{Apply Suggestions?}
+
+    M --&gt;|Yes| N[Auto-Optimize]
+    M --&gt;|No| O[Manual Review]
+
+    N --&gt; P[Preview Job Posting]
+    O --&gt; P
+
+    P --&gt; Q{Publish?}
+    Q --&gt;|No| R[Edit Job Posting]
+    R --&gt; P
+    Q --&gt;|Yes| S[Publish Job]
+
+    S --&gt; T[Job Goes Live]
+    T --&gt; U[Notification to Network]
+    U --&gt; V[Analytics Tracking Starts]
+    V --&gt; W[Application Monitoring]
+
+    W --&gt; X{Applications Received?}
+    X --&gt;|Yes| Y[Review Applications]
+    X --&gt;|No| Z[Promote Job Posting]
+
+    Y --&gt; AA[Shortlist Candidates]
+    AA --&gt; BB[Schedule Interviews]
+    BB --&gt; CC[Hiring Decision]
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+
+    class A,CC startEnd
+    class B,C,D,E,F,G,H,I,J,O,P,R,S,T,U,V,W,Y,AA,BB,Z process
+    class M,Q,X decision
+    class K,L,N ai</code></pre>
+<h2 id="business-process-workflows">Business Process Workflows</h2>
+<h3 id="21-application-review-process">2.1 Application Review Process</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Application Received] --&gt; B[Automatic Screening]
+    B --&gt; C[AI Initial Assessment]
+    C --&gt; D{Meets Basic Requirements?}
+
+    D --&gt;|No| E[Auto-Rejection]
+    E --&gt; F[Send Rejection Email]
+    F --&gt; G[Update Application Status]
+
+    D --&gt;|Yes| H[Calculate Match Score]
+    H --&gt; I{Score Above Threshold?}
+
+    I --&gt;|No| J[Manual Review Queue]
+    I --&gt;|Yes| K[Priority Review Queue]
+
+    J --&gt; L[Recruiter Manual Review]
+    K --&gt; M[Senior Recruiter Review]
+
+    L --&gt; N{Manual Decision}
+    M --&gt; O{Priority Decision}
+
+    N --&gt;|Reject| E
+    N --&gt;|Shortlist| P[Add to Shortlist]
+    O --&gt;|Reject| E
+    O --&gt;|Fast-track| Q[Schedule Interview]
+    O --&gt;|Shortlist| P
+
+    P --&gt; R[Shortlist Notification]
+    R --&gt; S{Interview Required?}
+
+    S --&gt;|Yes| Q
+    S --&gt;|No| T[Direct Offer Process]
+
+    Q --&gt; U[Interview Scheduling]
+    U --&gt; V[Interview Conducted]
+    V --&gt; W[Post-Interview Assessment]
+
+    W --&gt; X{Interview Result}
+    X --&gt;|Pass| T
+    X --&gt;|Fail| Y[Thank You Email]
+
+    T --&gt; Z[Job Offer]
+    Z --&gt; AA{Offer Accepted?}
+
+    AA --&gt;|Yes| BB[Onboarding Process]
+    AA --&gt;|No| CC[Offer Declined]
+
+    G --&gt; DD[Process Complete]
+    Y --&gt; DD
+    BB --&gt; DD
+    CC --&gt; DD
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    classDef rejection fill:#ffebee,stroke:#f44336,stroke-width:2px
+    classDef success fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
+
+    class A,DD startEnd
+    class B,F,G,J,K,L,M,P,R,U,V,W,Z process
+    class D,I,N,O,S,X,AA decision
+    class C,H ai
+    class E,Y rejection
+    class BB,T success</code></pre>
+<h3 id="22-cv-enhancement-process">2.2 CV Enhancement Process</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[CV Upload/Creation] --&gt; B[Parse CV Content]
+    B --&gt; C[AI Content Analysis]
+    C --&gt; D[Extract Skills &amp; Experience]
+    D --&gt; E[Industry Benchmarking]
+
+    E --&gt; F[Generate Improvement Suggestions]
+    F --&gt; G[Identify Missing Skills]
+    G --&gt; H[ATS Optimization Check]
+    H --&gt; I[Generate Report]
+
+    I --&gt; J{User Wants Improvements?}
+    J --&gt;|No| K[Save Current Version]
+    J --&gt;|Yes| L[Show Suggestions]
+
+    L --&gt; M{Auto-Apply Suggestions?}
+    M --&gt;|Yes| N[AI Auto-Enhancement]
+    M --&gt;|No| O[Manual Editing Mode]
+
+    N --&gt; P[Apply AI Improvements]
+    P --&gt; Q[Validate Changes]
+    Q --&gt; R{Validation Passed?}
+
+    R --&gt;|No| S[Revert Changes]
+    S --&gt; O
+    R --&gt;|Yes| T[Save Enhanced CV]
+
+    O --&gt; U[User Manual Edits]
+    U --&gt; V[Real-time AI Feedback]
+    V --&gt; W{Save Changes?}
+
+    W --&gt;|No| X[Discard Changes]
+    W --&gt;|Yes| Y[Save Manual Changes]
+
+    K --&gt; Z[Version Control Update]
+    T --&gt; Z
+    Y --&gt; Z
+    X --&gt; Z
+
+    Z --&gt; AA[Update CV Analytics]
+    AA --&gt; BB[Trigger Job Matching]
+    BB --&gt; CC[Process Complete]
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    classDef manual fill:#f9f9f9,stroke:#757575,stroke-width:2px
+
+    class A,CC startEnd
+    class B,E,I,K,P,Q,S,T,Y,X,Z,AA,BB process
+    class J,M,R,W decision
+    class C,D,F,G,H,N,V ai
+    class L,O,U manual</code></pre>
+<h2 id="technical-process-workflows">Technical Process Workflows</h2>
+<h3 id="31-system-authentication-flow">3.1 System Authentication Flow</h3>
+<pre class="mermaid"><code>sequenceDiagram
+    participant U as User
+    participant F as Frontend
+    participant AG as API Gateway
+    participant AS as Auth Service
+    participant DB as Database
+    participant R as Redis Cache
+
+    U-&gt;&gt;F: Login Request
+    F-&gt;&gt;AG: POST /api/auth/login
+    AG-&gt;&gt;AS: Forward Auth Request
+
+    AS-&gt;&gt;DB: Validate Credentials
+    DB--&gt;&gt;AS: User Data
+
+    alt Valid Credentials
+        AS-&gt;&gt;AS: Generate JWT Tokens
+        AS-&gt;&gt;R: Store Refresh Token
+        AS--&gt;&gt;AG: Return Tokens
+        AG--&gt;&gt;F: Auth Success + Tokens
+        F-&gt;&gt;F: Store Access Token
+        F--&gt;&gt;U: Login Success
+
+        Note over U,F: User navigates app
+        U-&gt;&gt;F: API Request
+        F-&gt;&gt;AG: Request + Access Token
+        AG-&gt;&gt;AG: Validate JWT
+
+        alt Token Valid
+            AG-&gt;&gt;AG: Extract User Info
+            AG-&gt;&gt;AS: Forward Request
+            AS--&gt;&gt;AG: Response
+            AG--&gt;&gt;F: API Response
+            F--&gt;&gt;U: Data
+        else Token Expired
+            AG--&gt;&gt;F: 401 Unauthorized
+            F-&gt;&gt;AG: POST /api/auth/refresh
+            AG-&gt;&gt;AS: Refresh Token Request
+            AS-&gt;&gt;R: Validate Refresh Token
+
+            alt Refresh Valid
+                AS-&gt;&gt;AS: Generate New Access Token
+                AS--&gt;&gt;AG: New Access Token
+                AG--&gt;&gt;F: Token Refreshed
+                F-&gt;&gt;F: Update Stored Token
+                F-&gt;&gt;AG: Retry Original Request
+            else Refresh Invalid
+                AS--&gt;&gt;AG: 401 Unauthorized
+                AG--&gt;&gt;F: Force Logout
+                F-&gt;&gt;F: Clear Tokens
+                F--&gt;&gt;U: Redirect to Login
+            end
+        end
+    else Invalid Credentials
+        AS--&gt;&gt;AG: 401 Unauthorized
+        AG--&gt;&gt;F: Login Failed
+        F--&gt;&gt;U: Error Message
+    end</code></pre>
+<h3 id="32-job-scraping-processing-workflow">3.2 Job Scraping &amp; Processing Workflow</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Scheduled Job Scraping] --&gt; B[Initialize Scraping Session]
+    B --&gt; C[Load Target Job Boards]
+    C --&gt; D[Configure Scraping Parameters]
+
+    D --&gt; E{For Each Job Board}
+    E --&gt; F[LinkedIn Scraper]
+    E --&gt; G[Indeed Scraper]
+    E --&gt; H[Glassdoor Scraper]
+
+    F --&gt; I[Extract Job Listings]
+    G --&gt; I
+    H --&gt; I
+
+    I --&gt; J[Data Validation &amp; Cleaning]
+    J --&gt; K[Duplicate Detection]
+    K --&gt; L{Duplicate Found?}
+
+    L --&gt;|Yes| M[Skip Duplicate]
+    L --&gt;|No| N[Process New Job]
+
+    M --&gt; O[Log Skipped Job]
+    N --&gt; P[Extract Job Details]
+    P --&gt; Q[Company Information Lookup]
+    Q --&gt; R[Location Standardization]
+    R --&gt; S[Skill Extraction]
+
+    S --&gt; T[AI Job Analysis]
+    T --&gt; U[Generate Job Embeddings]
+    U --&gt; V[Store in Database]
+    V --&gt; W[Update Search Index]
+
+    W --&gt; X[Job Quality Score]
+    X --&gt; Y{Quality Threshold Met?}
+
+    Y --&gt;|No| Z[Flag for Manual Review]
+    Y --&gt;|Yes| AA[Publish Job]
+
+    Z --&gt; BB[Manual Review Queue]
+    AA --&gt; CC[Trigger Job Matching]
+    CC --&gt; DD[Send Job Alerts]
+
+    O --&gt; EE{More Jobs?}
+    BB --&gt; EE
+    DD --&gt; EE
+
+    EE --&gt;|Yes| E
+    EE --&gt;|No| FF[Generate Scraping Report]
+    FF --&gt; GG[Update Scraping Metrics]
+    GG --&gt; HH[Schedule Next Run]
+
+    %% Error Handling
+    I -.-&gt;|Error| II[Log Scraping Error]
+    P -.-&gt;|Error| II
+    T -.-&gt;|Error| II
+    II --&gt; JJ[Error Notification]
+    JJ --&gt; EE
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    classDef error fill:#ffebee,stroke:#f44336,stroke-width:2px
+    classDef scrapers fill:#e0f2f1,stroke:#009688,stroke-width:2px
+
+    class A,HH startEnd
+    class B,C,D,I,J,K,M,O,P,Q,R,V,W,AA,BB,CC,DD,FF,GG process
+    class E,L,Y,EE decision
+    class S,T,U,X ai
+    class II,JJ error
+    class F,G,H scrapers</code></pre>
+<h2 id="n8n-automation-workflows">n8n Automation Workflows</h2>
+<h3 id="41-auto-apply-workflow">4.1 Auto-Apply Workflow</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Job Matching Trigger] --&gt; B[Load User Preferences]
+    B --&gt; C[Filter Eligible Jobs]
+    C --&gt; D{Jobs Available?}
+
+    D --&gt;|No| E[No Action Needed]
+    D --&gt;|Yes| F[For Each Matched Job]
+
+    F --&gt; G[Check Application History]
+    G --&gt; H{Already Applied?}
+    H --&gt;|Yes| I[Skip Job]
+    H --&gt;|No| J[Validate Job Requirements]
+
+    J --&gt; K{Requirements Met?}
+    K --&gt;|No| I
+    K --&gt;|Yes| L[Select Best CV]
+
+    L --&gt; M[Generate Cover Letter]
+    M --&gt; N[AI Application Review]
+    N --&gt; O{Quality Check Passed?}
+
+    O --&gt;|No| P[Flag for Manual Review]
+    O --&gt;|Yes| Q[Prepare Application Data]
+
+    Q --&gt; R{External Platform?}
+    R --&gt;|Yes| S[Use External API]
+    R --&gt;|No| T[Internal Application]
+
+    S --&gt; U[Submit via API]
+    T --&gt; V[Create Internal Application]
+
+    U --&gt; W{Submission Successful?}
+    V --&gt; X[Mark as Applied]
+
+    W --&gt;|No| Y[Log Error &amp; Retry]
+    W --&gt;|Yes| Z[Confirm Application]
+
+    Z --&gt; X
+    X --&gt; AA[Update Application Tracking]
+    AA --&gt; BB[Send User Notification]
+
+    I --&gt; CC{More Jobs?}
+    P --&gt; CC
+    BB --&gt; CC
+    Y --&gt; CC
+
+    CC --&gt;|Yes| F
+    CC --&gt;|No| DD[Generate Auto-Apply Report]
+    DD --&gt; EE[Send Summary Email]
+
+    E --&gt; FF[End Process]
+    EE --&gt; FF
+
+    %% Error Handling
+    Y --&gt; GG{Retry Limit Reached?}
+    GG --&gt;|No| HH[Wait &amp; Retry]
+    GG --&gt;|Yes| II[Mark as Failed]
+    HH --&gt; U
+    II --&gt; CC
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    classDef external fill:#e0f2f1,stroke:#009688,stroke-width:2px
+    classDef error fill:#ffebee,stroke:#f44336,stroke-width:2px
+
+    class A,E,FF startEnd
+    class B,C,G,I,L,P,Q,T,V,X,AA,BB,DD,EE process
+    class D,H,K,O,R,W,CC,GG decision
+    class M,N ai
+    class S,U external
+    class Y,HH,II error</code></pre>
+<h3 id="42-notification-orchestration-workflow">4.2 Notification Orchestration Workflow</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Notification Trigger] --&gt; B[Load Notification Template]
+    B --&gt; C[Identify Recipients]
+    C --&gt; D[Check User Preferences]
+    D --&gt; E[Filter by Preferences]
+
+    E --&gt; F{Recipients Found?}
+    F --&gt;|No| G[Log No Recipients]
+    F --&gt;|Yes| H[For Each Recipient]
+
+    H --&gt; I[Load User Profile]
+    I --&gt; J[Personalize Content]
+    J --&gt; K[Select Delivery Methods]
+
+    K --&gt; L{Email Enabled?}
+    L --&gt;|Yes| M[Prepare Email]
+    L --&gt;|No| N{SMS Enabled?}
+
+    N --&gt;|Yes| O[Prepare SMS]
+    N --&gt;|No| P{Push Enabled?}
+
+    P --&gt;|Yes| Q[Prepare Push Notification]
+    P --&gt;|No| R[In-App Only]
+
+    M --&gt; S[Send Email via SendGrid]
+    O --&gt; T[Send SMS via Twilio]
+    Q --&gt; U[Send Push via Firebase]
+    R --&gt; V[Create In-App Notification]
+
+    S --&gt; W{Email Successful?}
+    T --&gt; X{SMS Successful?}
+    U --&gt; Y{Push Successful?}
+    V --&gt; Z[In-App Created]
+
+    W --&gt;|Yes| AA[Log Email Success]
+    W --&gt;|No| BB[Log Email Failure]
+    X --&gt;|Yes| CC[Log SMS Success]
+    X --&gt;|No| DD[Log SMS Failure]
+    Y --&gt;|Yes| EE[Log Push Success]
+    Y --&gt;|No| FF[Log Push Failure]
+
+    AA --&gt; GG[Update Delivery Status]
+    BB --&gt; GG
+    CC --&gt; GG
+    DD --&gt; GG
+    EE --&gt; GG
+    FF --&gt; GG
+    Z --&gt; GG
+
+    GG --&gt; HH{More Recipients?}
+    HH --&gt;|Yes| H
+    HH --&gt;|No| II[Generate Delivery Report]
+
+    II --&gt; JJ[Update Analytics]
+    JJ --&gt; KK[Schedule Follow-up if Needed]
+
+    G --&gt; LL[End Process]
+    KK --&gt; LL
+
+    %% Error Handling
+    BB -.-&gt;|Retry| MM[Retry Email]
+    DD -.-&gt;|Retry| NN[Retry SMS]
+    FF -.-&gt;|Retry| OO[Retry Push]
+
+    MM --&gt; W
+    NN --&gt; X
+    OO --&gt; Y
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef external fill:#e0f2f1,stroke:#009688,stroke-width:2px
+    classDef success fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
+    classDef failure fill:#ffebee,stroke:#f44336,stroke-width:2px
+
+    class A,G,LL startEnd
+    class B,C,D,E,I,J,K,M,O,Q,R,V,II,JJ,KK process
+    class F,L,N,P,W,X,Y,HH decision
+    class S,T,U external
+    class AA,CC,EE,Z success
+    class BB,DD,FF,MM,NN,OO failure</code></pre>
+<h2 id="ai-processing-workflows">AI Processing Workflows</h2>
+<h3 id="51-cv-analysis-optimization-workflow">5.1 CV Analysis &amp; Optimization Workflow</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[CV Submitted] --&gt; B[Extract Text Content]
+    B --&gt; C[Preprocess Text]
+    C --&gt; D[Send to AI Service]
+
+    D --&gt; E[Skill Extraction]
+    E --&gt; F[Experience Analysis]
+    F --&gt; G[Education Parsing]
+    G --&gt; H[Achievement Identification]
+    H --&gt; I[ATS Compatibility Check]
+
+    I --&gt; J[Generate Embeddings]
+    J --&gt; K[Industry Benchmarking]
+    K --&gt; L[Gap Analysis]
+    L --&gt; M[Improvement Recommendations]
+
+    M --&gt; N[Score Calculation]
+    N --&gt; O{Score Satisfactory?}
+
+    O --&gt;|Yes| P[Highlight Strengths]
+    O --&gt;|No| Q[Detailed Improvement Plan]
+
+    P --&gt; R[Generate Success Report]
+    Q --&gt; S[Prioritize Improvements]
+    S --&gt; T[Suggest Templates]
+    T --&gt; U[Recommend Skills to Add]
+    U --&gt; V[Writing Suggestions]
+
+    R --&gt; W[Store Analysis Results]
+    V --&gt; W
+
+    W --&gt; X[Update User Profile]
+    X --&gt; Y[Trigger Job Matching]
+    Y --&gt; Z[Send Analysis Report]
+    Z --&gt; AA[Process Complete]
+
+    %% Error Handling
+    D -.-&gt;|API Error| BB[Retry with Backup AI]
+    BB -.-&gt;|Still Failed| CC[Manual Review Queue]
+    CC --&gt; DD[Human Analysis]
+    DD --&gt; W
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    classDef error fill:#ffebee,stroke:#f44336,stroke-width:2px
+    classDef manual fill:#f9f9f9,stroke:#757575,stroke-width:2px
+
+    class A,AA startEnd
+    class B,C,P,R,S,T,U,V,W,X,Y,Z process
+    class O decision
+    class D,E,F,G,H,I,J,K,L,M,N,Q ai
+    class BB,CC error
+    class DD manual</code></pre>
+<h3 id="52-job-matching-algorithm-workflow">5.2 Job Matching Algorithm Workflow</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[User Profile Updated] --&gt; B[Load User Preferences]
+    B --&gt; C[Extract User Skills]
+    C --&gt; D[Get Experience Level]
+    D --&gt; E[Load Location Preferences]
+    E --&gt; F[Get Salary Expectations]
+
+    F --&gt; G[Query Available Jobs]
+    G --&gt; H[For Each Job]
+
+    H --&gt; I[Calculate Skill Match]
+    I --&gt; J[Evaluate Experience Fit]
+    J --&gt; K[Check Location Compatibility]
+    K --&gt; L[Assess Salary Alignment]
+    L --&gt; M[Calculate Cultural Fit]
+
+    M --&gt; N[Weighted Score Calculation]
+    N --&gt; O{Score Above Threshold?}
+
+    O --&gt;|No| P[Skip Job]
+    O --&gt;|Yes| Q[Add to Candidates]
+
+    P --&gt; R{More Jobs?}
+    Q --&gt; R
+
+    R --&gt;|Yes| H
+    R --&gt;|No| S[Rank by Score]
+
+    S --&gt; T[Apply ML Model]
+    T --&gt; U[Personalization Adjustment]
+    U --&gt; V[Generate Explanations]
+    V --&gt; W[Prepare Recommendations]
+
+    W --&gt; X{Recommendations Available?}
+    X --&gt;|No| Y[Generate Fallback Suggestions]
+    X --&gt;|Yes| Z[Store Match Results]
+
+    Y --&gt; Z
+    Z --&gt; AA[Update User Feed]
+    AA --&gt; BB[Trigger Notifications]
+    BB --&gt; CC[Log Matching Event]
+    CC --&gt; DD[Process Complete]
+
+    %% Machine Learning Enhancement
+    S --&gt; EE[Feature Engineering]
+    EE --&gt; FF[Model Prediction]
+    FF --&gt; GG[Confidence Scoring]
+    GG --&gt; U
+
+    %% Feedback Loop
+    DD --&gt; HH[Collect User Feedback]
+    HH --&gt; II[Update ML Model]
+    II --&gt; JJ[Improve Future Matches]
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    classDef ml fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+
+    class A,DD,JJ startEnd
+    class B,C,D,E,F,G,P,S,V,W,Y,Z,AA,BB,CC process
+    class H,O,R,X decision
+    class I,J,K,L,M,N,Q,T,U ai
+    class EE,FF,GG,HH,II ml</code></pre>
+<h2 id="error-handling-workflows">Error Handling Workflows</h2>
+<h3 id="61-system-error-recovery-workflow">6.1 System Error Recovery Workflow</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Error Detected] --&gt; B[Classify Error Type]
+    B --&gt; C{Error Severity}
+
+    C --&gt;|Critical| D[Immediate Alert]
+    C --&gt;|High| E[Priority Queue]
+    C --&gt;|Medium| F[Standard Queue]
+    C --&gt;|Low| G[Log Only]
+
+    D --&gt; H[Page On-Call Engineer]
+    E --&gt; I[Send Alert to Team]
+    F --&gt; J[Create Ticket]
+    G --&gt; K[Background Processing]
+
+    H --&gt; L[Immediate Response]
+    I --&gt; M[Priority Investigation]
+    J --&gt; N[Standard Investigation]
+    K --&gt; O[Periodic Review]
+
+    L --&gt; P{System Down?}
+    P --&gt;|Yes| Q[Activate Failover]
+    P --&gt;|No| R[Isolate Problem]
+
+    Q --&gt; S[Switch to Backup]
+    S --&gt; T[Verify Service Restoration]
+    T --&gt; U{Service OK?}
+
+    U --&gt;|No| V[Emergency Escalation]
+    U --&gt;|Yes| W[Monitor Closely]
+
+    R --&gt; X[Implement Quick Fix]
+    X --&gt; Y{Fix Successful?}
+
+    Y --&gt;|No| Z[Escalate to Next Level]
+    Y --&gt;|Yes| AA[Monitor Solution]
+
+    M --&gt; BB[Deep Dive Analysis]
+    N --&gt; BB
+    O --&gt; BB
+
+    BB --&gt; CC[Root Cause Identified]
+    CC --&gt; DD[Implement Permanent Fix]
+    DD --&gt; EE[Test Fix Thoroughly]
+    EE --&gt; FF{Testing Passed?}
+
+    FF --&gt;|No| GG[Revise Fix]
+    FF --&gt;|Yes| HH[Deploy to Production]
+
+    GG --&gt; DD
+    HH --&gt; II[Post-Deployment Monitoring]
+    II --&gt; JJ[Update Documentation]
+    JJ --&gt; KK[Conduct Post-Mortem]
+
+    V --&gt; LL[Emergency Response Team]
+    Z --&gt; LL
+    W --&gt; MM[Incident Resolved]
+    AA --&gt; MM
+    KK --&gt; MM
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef critical fill:#ffebee,stroke:#f44336,stroke-width:3px
+    classDef emergency fill:#e91e63,stroke:#ffffff,stroke-width:3px
+
+    class A,MM startEnd
+    class D,E,F,G,H,I,J,K,L,M,N,O,R,S,T,X,BB,CC,DD,EE,HH,II,JJ,KK process
+    class B,C,P,U,Y,FF decision
+    class Q,V,Z,LL critical
+    class V,LL emergency</code></pre>
+<h3 id="62-data-recovery-backup-workflow">6.2 Data Recovery &amp; Backup Workflow</h3>
+<pre class="mermaid"><code>flowchart TD
+    A[Data Loss Detected] --&gt; B[Assess Impact Scope]
+    B --&gt; C{Data Type}
+
+    C --&gt;|User Data| D[High Priority Recovery]
+    C --&gt;|System Data| E[Medium Priority Recovery]
+    C --&gt;|Analytics Data| F[Low Priority Recovery]
+
+    D --&gt; G[Immediate Backup Check]
+    E --&gt; H[Standard Backup Check]
+    F --&gt; I[Historical Backup Check]
+
+    G --&gt; J{Recent Backup Available?}
+    H --&gt; J
+    I --&gt; J
+
+    J --&gt;|Yes| K[Validate Backup Integrity]
+    J --&gt;|No| L[Check Alternative Sources]
+
+    K --&gt; M{Backup Valid?}
+    M --&gt;|No| L
+    M --&gt;|Yes| N[Begin Recovery Process]
+
+    L --&gt; O{Alternative Found?}
+    O --&gt;|No| P[Data Loss Confirmed]
+    O --&gt;|Yes| Q[Prepare Alternative Data]
+
+    N --&gt; R[Create Recovery Point]
+    Q --&gt; R
+    R --&gt; S[Stop Write Operations]
+    S --&gt; T[Begin Data Restoration]
+
+    T --&gt; U[Monitor Recovery Progress]
+    U --&gt; V{Recovery Complete?}
+
+    V --&gt;|No| W[Continue Recovery]
+    W --&gt; U
+    V --&gt;|Yes| X[Validate Restored Data]
+
+    X --&gt; Y{Data Integrity OK?}
+    Y --&gt;|No| Z[Retry with Different Backup]
+    Y --&gt;|Yes| AA[Resume Normal Operations]
+
+    Z --&gt; K
+    AA --&gt; BB[Verify System Stability]
+    BB --&gt; CC[Update Monitoring]
+    CC --&gt; DD[Document Incident]
+
+    P --&gt; EE[Initiate Data Recreation]
+    EE --&gt; FF[Contact Affected Users]
+    FF --&gt; GG[Implement Compensation]
+    GG --&gt; DD
+
+    DD --&gt; HH[Review Backup Strategy]
+    HH --&gt; II[Implement Improvements]
+    II --&gt; JJ[Recovery Complete]
+
+    %% Styling
+    classDef startEnd fill:#e8f5e8,stroke:#4caf50,stroke-width:3px
+    classDef process fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef decision fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef critical fill:#ffebee,stroke:#f44336,stroke-width:2px
+    classDef recovery fill:#e0f2f1,stroke:#009688,stroke-width:2px
+
+    class A,JJ startEnd
+    class B,G,H,I,K,L,N,Q,R,S,T,U,W,X,AA,BB,CC,DD,EE,FF,GG,HH,II process
+    class C,J,M,O,V,Y decision
+    class D,P critical
+    class N,R,T,U,W recovery</code></pre>
+<p>This comprehensive workflow documentation provides detailed visual guides for all major processes in the AI-Powered Job Seeker Platform, enabling better understanding of user journeys, business processes, technical implementations, and error handling procedures.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2025 AI-legend
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/AI-legend/Job-Portal-Doc" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2" fill="currentColor"></path></svg>
+</a>
+<a class="md-social__link" href="https://linkedin.com/in/your-profile" rel="noopener" target="_blank" title="linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z" fill="currentColor"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "search.highlight", "search.share", "toc.follow", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+</body>
+</html>

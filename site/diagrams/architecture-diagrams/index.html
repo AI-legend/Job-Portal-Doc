@@ -1,0 +1,2012 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Comprehensive documentation for the AI-powered job seeker platform with dual user support, CV builder, and workflow automation" name="description"/>
+<meta content="AI-legend" name="author"/>
+<link href="https://ai-legend.github.io/Job-Portal-Doc/diagrams/architecture-diagrams/" rel="canonical"/>
+<link href="../workflow-diagrams/" rel="prev"/>
+<link href="../../PROJECT_MILESTONES/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.16" name="generator"/>
+<title>Architecture Diagrams - AI-Powered Job Seeker Platform</title>
+<link href="../../assets/stylesheets/main.7e37652d.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="blue" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#architecture-diagrams">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<div data-md-color-scheme="default" data-md-component="outdated" hidden="">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="AI-Powered Job Seeker Platform" class="md-header__button md-logo" data-md-component="logo" href="../.." title="AI-Powered Job Seeker Platform">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            AI-Powered Job Seeker Platform
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Architecture Diagrams
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="blue" data-md-color-media="" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<a aria-label="Share" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="Share">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+</a>
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/AI-legend/Job-Portal-Doc" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2" fill="currentColor"></path></svg>
+</div>
+<div class="md-source__repository">
+    AI-legend/Job-Portal-Doc
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../architecture/">
+          
+  
+  
+  Architecture
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../api/">
+        
+  
+  
+    
+  
+  API Documentation
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../deployment/">
+        
+  
+  
+    
+  
+  Deployment
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../development/">
+        
+  
+  
+    
+  
+  Development
+
+      </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+  
+  Visual Documentation
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../PROJECT_MILESTONES/">
+          
+  
+  
+  Project Planning
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="AI-Powered Job Seeker Platform" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="AI-Powered Job Seeker Platform">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    AI-Powered Job Seeker Platform
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/AI-legend/Job-Portal-Doc" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2" fill="currentColor"></path></svg>
+</div>
+<div class="md-source__repository">
+    AI-legend/Job-Portal-Doc
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    Architecture
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Architecture
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/frontend/">
+<span class="md-ellipsis">
+    Frontend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/backend/">
+<span class="md-ellipsis">
+    Backend
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../architecture/workflow/">
+<span class="md-ellipsis">
+    Workflow
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../api/">
+<span class="md-ellipsis">
+    API Documentation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../deployment/">
+<span class="md-ellipsis">
+    Deployment
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../development/">
+<span class="md-ellipsis">
+    Development
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-ellipsis">
+    Visual Documentation
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            Visual Documentation
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    Overview
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../data-flow-diagram/">
+<span class="md-ellipsis">
+    Data Flow Diagrams
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../entity-relationship-diagram/">
+<span class="md-ellipsis">
+    Entity Relationship Diagrams
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../workflow-diagrams/">
+<span class="md-ellipsis">
+    Workflow Diagrams
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    Architecture Diagrams
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    Architecture Diagrams
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#table-of-contents">
+<span class="md-ellipsis">
+      Table of Contents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#high-level-system-architecture">
+<span class="md-ellipsis">
+      High-Level System Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microservices-architecture">
+<span class="md-ellipsis">
+      Microservices Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#frontend-architecture">
+<span class="md-ellipsis">
+      Frontend Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backend-services-architecture">
+<span class="md-ellipsis">
+      Backend Services Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-architecture">
+<span class="md-ellipsis">
+      Data Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security-architecture">
+<span class="md-ellipsis">
+      Security Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment-architecture">
+<span class="md-ellipsis">
+      Deployment Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#network-architecture">
+<span class="md-ellipsis">
+      Network Architecture
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+<span class="md-ellipsis">
+    Project Planning
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            Project Planning
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../PROJECT_MILESTONES/">
+<span class="md-ellipsis">
+    Milestones
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../TECH_STACK/">
+<span class="md-ellipsis">
+    Technology Stack
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#overview">
+<span class="md-ellipsis">
+      Overview
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#table-of-contents">
+<span class="md-ellipsis">
+      Table of Contents
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#high-level-system-architecture">
+<span class="md-ellipsis">
+      High-Level System Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#microservices-architecture">
+<span class="md-ellipsis">
+      Microservices Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#frontend-architecture">
+<span class="md-ellipsis">
+      Frontend Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#backend-services-architecture">
+<span class="md-ellipsis">
+      Backend Services Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#data-architecture">
+<span class="md-ellipsis">
+      Data Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#security-architecture">
+<span class="md-ellipsis">
+      Security Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#deployment-architecture">
+<span class="md-ellipsis">
+      Deployment Architecture
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#network-architecture">
+<span class="md-ellipsis">
+      Network Architecture
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/AI-legend/Job-Portal-Doc/edit/main/docs/diagrams/architecture-diagrams.md" rel="edit" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
+</a>
+<a class="md-content__button md-icon" href="https://github.com/AI-legend/Job-Portal-Doc/raw/main/docs/diagrams/architecture-diagrams.md" title="View source of this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"></path></svg>
+</a>
+<h1 id="architecture-diagrams">Architecture Diagrams</h1>
+<h2 id="overview">Overview</h2>
+<p>This document contains comprehensive architecture diagrams for the AI-Powered Job Seeker Platform, showing system structure, component relationships, deployment architecture, and security design.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#high-level-system-architecture">High-Level System Architecture</a></li>
+<li><a href="#microservices-architecture">Microservices Architecture</a></li>
+<li><a href="#frontend-architecture">Frontend Architecture</a></li>
+<li><a href="#backend-services-architecture">Backend Services Architecture</a></li>
+<li><a href="#data-architecture">Data Architecture</a></li>
+<li><a href="#security-architecture">Security Architecture</a></li>
+<li><a href="#deployment-architecture">Deployment Architecture</a></li>
+<li><a href="#network-architecture">Network Architecture</a></li>
+</ol>
+<h2 id="high-level-system-architecture">High-Level System Architecture</h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "External Users"
+        JS[Job Seekers]
+        R[Recruiters]
+        A[Administrators]
+    end
+
+    subgraph "Client Layer"
+        WEB[Web Application&lt;br/&gt;React/Next.js]
+        MOB[Mobile App&lt;br/&gt;React Native]
+        PWA[Progressive Web App]
+    end
+
+    subgraph "CDN &amp; Load Balancing"
+        CDN[CloudFront CDN]
+        ALB[Application Load Balancer]
+    end
+
+    subgraph "API Gateway Layer"
+        AG[API Gateway&lt;br/&gt;Express.js]
+        AUTH[Authentication&lt;br/&gt;Middleware]
+        RL[Rate Limiting]
+        LOG[Logging &amp; Monitoring]
+    end
+
+    subgraph "Microservices Layer"
+        US[User Service]
+        CVS[CV Service]
+        JS_SVC[Job Service]
+        AS[Application Service]
+        NS[Notification Service]
+        AIS[AI Service]
+        ANS[Analytics Service]
+    end
+
+    subgraph "Workflow Engine"
+        N8N[n8n Workflow Engine]
+        WF[Custom Workflows]
+    end
+
+    subgraph "Data Layer"
+        MONGO[(MongoDB&lt;br/&gt;Primary Data)]
+        POSTGRES[(PostgreSQL&lt;br/&gt;Analytics)]
+        REDIS[(Redis&lt;br/&gt;Cache)]
+        S3[(S3&lt;br/&gt;File Storage)]
+    end
+
+    subgraph "External Services"
+        AI_EXT[AI APIs&lt;br/&gt;OpenAI, Claude]
+        JB_EXT[Job Boards&lt;br/&gt;LinkedIn, Indeed]
+        EMAIL[Email Service&lt;br/&gt;SendGrid]
+        SMS[SMS Service&lt;br/&gt;Twilio]
+        PAY[Payment&lt;br/&gt;Stripe]
+    end
+
+    subgraph "Infrastructure"
+        K8S[Kubernetes Cluster]
+        MON[Monitoring&lt;br/&gt;Prometheus/Grafana]
+        CI_CD[CI/CD Pipeline&lt;br/&gt;GitHub Actions]
+    end
+
+    %% Client connections
+    JS --&gt; WEB
+    R --&gt; WEB
+    A --&gt; WEB
+    JS --&gt; MOB
+    R --&gt; PWA
+
+    %% CDN and Load Balancing
+    WEB --&gt; CDN
+    MOB --&gt; ALB
+    PWA --&gt; CDN
+    CDN --&gt; ALB
+
+    %% API Gateway
+    ALB --&gt; AG
+    AG --&gt; AUTH
+    AG --&gt; RL
+    AG --&gt; LOG
+
+    %% Microservices
+    AG --&gt; US
+    AG --&gt; CVS
+    AG --&gt; JS_SVC
+    AG --&gt; AS
+    AG --&gt; NS
+    AG --&gt; AIS
+    AG --&gt; ANS
+
+    %% Workflow connections
+    N8N --&gt; WF
+    WF --&gt; JB_EXT
+    WF --&gt; US
+    WF --&gt; AS
+
+    %% Data connections
+    US --&gt; MONGO
+    CVS --&gt; MONGO
+    JS_SVC --&gt; MONGO
+    AS --&gt; MONGO
+    ANS --&gt; POSTGRES
+    US --&gt; REDIS
+    CVS --&gt; S3
+
+    %% External service connections
+    AIS --&gt; AI_EXT
+    WF --&gt; JB_EXT
+    NS --&gt; EMAIL
+    NS --&gt; SMS
+    AG --&gt; PAY
+
+    %% Infrastructure
+    K8S --&gt; MON
+    CI_CD --&gt; K8S
+
+    %% Styling
+    classDef user fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef client fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef gateway fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef service fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef data fill:#ffebee,stroke:#c62828,stroke-width:2px
+    classDef external fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef infra fill:#fafafa,stroke:#424242,stroke-width:2px
+
+    class JS,R,A user
+    class WEB,MOB,PWA client
+    class CDN,ALB,AG,AUTH,RL,LOG gateway
+    class US,CVS,JS_SVC,AS,NS,AIS,ANS,N8N,WF service
+    class MONGO,POSTGRES,REDIS,S3 data
+    class AI_EXT,JB_EXT,EMAIL,SMS,PAY external
+    class K8S,MON,CI_CD infra</code></pre>
+<h2 id="microservices-architecture">Microservices Architecture</h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "API Gateway"
+        AG[API Gateway]
+        AUTH_MW[Auth Middleware]
+        RATE_MW[Rate Limiting]
+        LOG_MW[Logging Middleware]
+        CORS_MW[CORS Middleware]
+    end
+
+    subgraph "Core Services"
+        subgraph "User Management"
+            US[User Service&lt;br/&gt;:3001]
+            PROFILE[Profile Management]
+            PREF[User Preferences]
+        end
+
+        subgraph "CV Management"
+            CVS[CV Service&lt;br/&gt;:3002]
+            TEMPLATE[Template Engine]
+            PDF[PDF Generator]
+            PARSER[CV Parser]
+        end
+
+        subgraph "Job Management"
+            JS_SVC[Job Service&lt;br/&gt;:3003]
+            SEARCH[Search Engine]
+            FILTER[Advanced Filtering]
+            GEO[Geolocation Service]
+        end
+
+        subgraph "Application Processing"
+            AS[Application Service&lt;br/&gt;:3004]
+            TRACK[Application Tracking]
+            STATUS[Status Management]
+            INTERVIEW[Interview Scheduling]
+        end
+    end
+
+    subgraph "AI &amp; ML Services"
+        AIS[AI Service&lt;br/&gt;:8000]
+        ML_MATCH[Job Matching ML]
+        NLP[NLP Processing]
+        EMBED[Embedding Service]
+        CHAT[Conversational AI]
+    end
+
+    subgraph "Notification Services"
+        NS[Notification Service&lt;br/&gt;:3005]
+        EMAIL_SVC[Email Service]
+        SMS_SVC[SMS Service]
+        PUSH_SVC[Push Notifications]
+        IN_APP[In-App Notifications]
+    end
+
+    subgraph "Analytics &amp; Reporting"
+        ANS[Analytics Service&lt;br/&gt;:3006]
+        METRICS[Metrics Collection]
+        REPORTS[Report Generation]
+        INSIGHTS[Business Insights]
+        DASHBOARD[Dashboard API]
+    end
+
+    subgraph "Workflow Automation"
+        WAS[Workflow Service&lt;br/&gt;:3007]
+        AUTO_APPLY[Auto-Apply Engine]
+        SCRAPER[Job Scraping]
+        SCHEDULER[Task Scheduler]
+    end
+
+    subgraph "Data Services"
+        DS[Data Service&lt;br/&gt;:3008]
+        SYNC[Data Synchronization]
+        BACKUP[Backup Management]
+        MIGRATION[Data Migration]
+    end
+
+    %% Gateway to Services
+    AG --&gt; US
+    AG --&gt; CVS
+    AG --&gt; JS_SVC
+    AG --&gt; AS
+    AG --&gt; AIS
+    AG --&gt; NS
+    AG --&gt; ANS
+    AG --&gt; WAS
+    AG --&gt; DS
+
+    %% Middleware flow
+    AG --&gt; AUTH_MW
+    AG --&gt; RATE_MW
+    AG --&gt; LOG_MW
+    AG --&gt; CORS_MW
+
+    %% Internal service connections
+    US --&gt; PROFILE
+    US --&gt; PREF
+    CVS --&gt; TEMPLATE
+    CVS --&gt; PDF
+    CVS --&gt; PARSER
+    JS_SVC --&gt; SEARCH
+    JS_SVC --&gt; FILTER
+    JS_SVC --&gt; GEO
+    AS --&gt; TRACK
+    AS --&gt; STATUS
+    AS --&gt; INTERVIEW
+
+    %% AI service components
+    AIS --&gt; ML_MATCH
+    AIS --&gt; NLP
+    AIS --&gt; EMBED
+    AIS --&gt; CHAT
+
+    %% Notification components
+    NS --&gt; EMAIL_SVC
+    NS --&gt; SMS_SVC
+    NS --&gt; PUSH_SVC
+    NS --&gt; IN_APP
+
+    %% Analytics components
+    ANS --&gt; METRICS
+    ANS --&gt; REPORTS
+    ANS --&gt; INSIGHTS
+    ANS --&gt; DASHBOARD
+
+    %% Workflow components
+    WAS --&gt; AUTO_APPLY
+    WAS --&gt; SCRAPER
+    WAS --&gt; SCHEDULER
+
+    %% Data service components
+    DS --&gt; SYNC
+    DS --&gt; BACKUP
+    DS --&gt; MIGRATION
+
+    %% Inter-service communication
+    AS -.-&gt; CVS
+    AS -.-&gt; JS_SVC
+    ML_MATCH -.-&gt; CVS
+    ML_MATCH -.-&gt; JS_SVC
+    AUTO_APPLY -.-&gt; AS
+    SCRAPER -.-&gt; JS_SVC
+    METRICS -.-&gt; US
+    METRICS -.-&gt; AS
+
+    %% Styling
+    classDef gateway fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef service fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef notification fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef analytics fill:#ffebee,stroke:#c62828,stroke-width:2px
+    classDef workflow fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef data fill:#fce4ec,stroke:#ad1457,stroke-width:2px
+    classDef middleware fill:#f9f9f9,stroke:#757575,stroke-width:1px
+
+    class AG,AUTH_MW,RATE_MW,LOG_MW,CORS_MW gateway
+    class US,CVS,JS_SVC,AS,PROFILE,PREF,TEMPLATE,PDF,PARSER,SEARCH,FILTER,GEO,TRACK,STATUS,INTERVIEW service
+    class AIS,ML_MATCH,NLP,EMBED,CHAT ai
+    class NS,EMAIL_SVC,SMS_SVC,PUSH_SVC,IN_APP notification
+    class ANS,METRICS,REPORTS,INSIGHTS,DASHBOARD analytics
+    class WAS,AUTO_APPLY,SCRAPER,SCHEDULER workflow
+    class DS,SYNC,BACKUP,MIGRATION data</code></pre>
+<h2 id="frontend-architecture">Frontend Architecture</h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "Browser/Mobile Environment"
+        USER[User Interaction]
+    end
+
+    subgraph "Frontend Application"
+        subgraph "Next.js App Router"
+            LAYOUT[Root Layout]
+            PAGES[Page Components]
+            API_ROUTES[API Routes]
+            MIDDLEWARE[Next.js Middleware]
+        end
+
+        subgraph "React Component Layer"
+            subgraph "Page Components"
+                HOME[Home Page]
+                DASHBOARD[Dashboard]
+                JOBS[Jobs Page]
+                CV_PAGE[CV Builder]
+                PROFILE[Profile Page]
+                SETTINGS[Settings]
+            end
+
+            subgraph "Shared Components"
+                HEADER[Header/Navigation]
+                FOOTER[Footer]
+                SIDEBAR[Sidebar]
+                MODALS[Modal Components]
+                FORMS[Form Components]
+                CARDS[Card Components]
+            end
+
+            subgraph "Feature Components"
+                CV_BUILDER[CV Builder Components]
+                JOB_SEARCH[Job Search Components]
+                AI_CHAT[AI Chat Interface]
+                NOTIFICATIONS[Notification Center]
+                ANALYTICS_UI[Analytics Dashboard]
+            end
+        end
+
+        subgraph "State Management"
+            REDUX[Redux Store]
+            RTK[Redux Toolkit]
+            ZUSTAND[Zustand Stores]
+            REACT_QUERY[TanStack Query]
+        end
+
+        subgraph "UI &amp; Styling"
+            TAILWIND[Tailwind CSS]
+            HEADLESS[Headless UI]
+            FRAMER[Framer Motion]
+            ICONS[Icon Library]
+        end
+
+        subgraph "Utilities &amp; Hooks"
+            CUSTOM_HOOKS[Custom Hooks]
+            UTILS[Utility Functions]
+            VALIDATORS[Form Validators]
+            FORMATTERS[Data Formatters]
+        end
+
+        subgraph "API Layer"
+            API_CLIENT[API Client]
+            AXIOS[Axios Instance]
+            INTERCEPTORS[Request/Response Interceptors]
+            CACHE[Response Caching]
+        end
+    end
+
+    subgraph "External Services"
+        BACKEND_API[Backend APIs]
+        CDN[CDN Assets]
+        ANALYTICS_EXT[Analytics Services]
+        ERROR_TRACK[Error Tracking]
+    end
+
+    %% User interactions
+    USER --&gt; LAYOUT
+
+    %% Layout structure
+    LAYOUT --&gt; HEADER
+    LAYOUT --&gt; PAGES
+    LAYOUT --&gt; FOOTER
+
+    %% Page to component relationships
+    PAGES --&gt; HOME
+    PAGES --&gt; DASHBOARD
+    PAGES --&gt; JOBS
+    PAGES --&gt; CV_PAGE
+    PAGES --&gt; PROFILE
+    PAGES --&gt; SETTINGS
+
+    %% Shared component usage
+    HOME --&gt; CARDS
+    DASHBOARD --&gt; ANALYTICS_UI
+    JOBS --&gt; JOB_SEARCH
+    CV_PAGE --&gt; CV_BUILDER
+    PROFILE --&gt; FORMS
+    SETTINGS --&gt; FORMS
+
+    %% Feature component relationships
+    CV_BUILDER --&gt; MODALS
+    JOB_SEARCH --&gt; CARDS
+    AI_CHAT --&gt; NOTIFICATIONS
+
+    %% State management flow
+    PAGES --&gt; REDUX
+    PAGES --&gt; ZUSTAND
+    REDUX --&gt; RTK
+    API_CLIENT --&gt; REACT_QUERY
+
+    %% Styling connections
+    PAGES --&gt; TAILWIND
+    SHARED --&gt; HEADLESS
+    FEATURE --&gt; FRAMER
+    UI --&gt; ICONS
+
+    %% Utility usage
+    FORMS --&gt; VALIDATORS
+    ANALYTICS_UI --&gt; FORMATTERS
+    API_CLIENT --&gt; CUSTOM_HOOKS
+
+    %% API layer
+    REACT_QUERY --&gt; API_CLIENT
+    API_CLIENT --&gt; AXIOS
+    AXIOS --&gt; INTERCEPTORS
+    INTERCEPTORS --&gt; CACHE
+
+    %% External connections
+    API_CLIENT --&gt; BACKEND_API
+    LAYOUT --&gt; CDN
+    PAGES --&gt; ANALYTICS_EXT
+    INTERCEPTORS --&gt; ERROR_TRACK
+
+    %% Styling
+    classDef user fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef framework fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef component fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef state fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef ui fill:#ffebee,stroke:#c62828,stroke-width:2px
+    classDef utility fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef api fill:#fce4ec,stroke:#ad1457,stroke-width:2px
+    classDef external fill:#f9f9f9,stroke:#757575,stroke-width:2px
+
+    class USER user
+    class LAYOUT,PAGES,API_ROUTES,MIDDLEWARE framework
+    class HOME,DASHBOARD,JOBS,CV_PAGE,PROFILE,SETTINGS,HEADER,FOOTER,SIDEBAR,MODALS,FORMS,CARDS,CV_BUILDER,JOB_SEARCH,AI_CHAT,NOTIFICATIONS,ANALYTICS_UI component
+    class REDUX,RTK,ZUSTAND,REACT_QUERY state
+    class TAILWIND,HEADLESS,FRAMER,ICONS ui
+    class CUSTOM_HOOKS,UTILS,VALIDATORS,FORMATTERS utility
+    class API_CLIENT,AXIOS,INTERCEPTORS,CACHE api
+    class BACKEND_API,CDN,ANALYTICS_EXT,ERROR_TRACK external</code></pre>
+<h2 id="backend-services-architecture">Backend Services Architecture</h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "API Gateway Layer"
+        AG[API Gateway&lt;br/&gt;Express.js]
+        AUTH[Authentication]
+        RATE[Rate Limiting]
+        PROXY[Service Proxy]
+    end
+
+    subgraph "Service Mesh"
+        SM[Service Mesh&lt;br/&gt;Istio]
+        LB[Load Balancing]
+        CIRCUIT[Circuit Breaker]
+        RETRY[Retry Logic]
+    end
+
+    subgraph "User Management Service"
+        direction TB
+        US[User Service]
+        subgraph "User Components"
+            AUTH_SVC[Authentication Service]
+            PROFILE_SVC[Profile Service]
+            PREF_SVC[Preferences Service]
+            RBAC[Role-Based Access Control]
+        end
+        subgraph "User Data"
+            USER_DB[(User Database)]
+            SESSION_CACHE[(Session Cache)]
+        end
+    end
+
+    subgraph "CV Management Service"
+        direction TB
+        CVS[CV Service]
+        subgraph "CV Components"
+            CV_CRUD[CV CRUD Operations]
+            TEMPLATE_SVC[Template Service]
+            PDF_GEN[PDF Generator]
+            VERSION[Version Control]
+        end
+        subgraph "CV Data"
+            CV_DB[(CV Database)]
+            FILE_STORAGE[(File Storage)]
+        end
+    end
+
+    subgraph "Job Management Service"
+        direction TB
+        JS_SVC[Job Service]
+        subgraph "Job Components"
+            JOB_CRUD[Job CRUD Operations]
+            SEARCH_SVC[Search Service]
+            GEO_SVC[Geolocation Service]
+            SCRAPER_SVC[Job Scraper Service]
+        end
+        subgraph "Job Data"
+            JOB_DB[(Job Database)]
+            SEARCH_INDEX[(Search Index)]
+        end
+    end
+
+    subgraph "AI Service Layer"
+        direction TB
+        AIS[AI Service&lt;br/&gt;FastAPI]
+        subgraph "AI Components"
+            NLP_SVC[NLP Service]
+            ML_SVC[ML Service]
+            EMBEDDING_SVC[Embedding Service]
+            CHAT_SVC[Chat Service]
+        end
+        subgraph "AI Data"
+            MODEL_STORE[(Model Store)]
+            VECTOR_DB[(Vector Database)]
+        end
+    end
+
+    subgraph "Message Queue System"
+        MQ[Message Queue&lt;br/&gt;Redis]
+        EVENTS[Event Bus]
+        WORKERS[Background Workers]
+    end
+
+    subgraph "Monitoring &amp; Observability"
+        METRICS[Metrics Collection]
+        LOGS[Centralized Logging]
+        TRACES[Distributed Tracing]
+        ALERTS[Alerting System]
+    end
+
+    %% API Gateway connections
+    AG --&gt; AUTH
+    AG --&gt; RATE
+    AG --&gt; PROXY
+
+    %% Service mesh connections
+    PROXY --&gt; SM
+    SM --&gt; LB
+    SM --&gt; CIRCUIT
+    SM --&gt; RETRY
+
+    %% Service routing
+    LB --&gt; US
+    LB --&gt; CVS
+    LB --&gt; JS_SVC
+    LB --&gt; AIS
+
+    %% User service internal
+    US --&gt; AUTH_SVC
+    US --&gt; PROFILE_SVC
+    US --&gt; PREF_SVC
+    US --&gt; RBAC
+    AUTH_SVC --&gt; USER_DB
+    PROFILE_SVC --&gt; USER_DB
+    RBAC --&gt; SESSION_CACHE
+
+    %% CV service internal
+    CVS --&gt; CV_CRUD
+    CVS --&gt; TEMPLATE_SVC
+    CVS --&gt; PDF_GEN
+    CVS --&gt; VERSION
+    CV_CRUD --&gt; CV_DB
+    PDF_GEN --&gt; FILE_STORAGE
+
+    %% Job service internal
+    JS_SVC --&gt; JOB_CRUD
+    JS_SVC --&gt; SEARCH_SVC
+    JS_SVC --&gt; GEO_SVC
+    JS_SVC --&gt; SCRAPER_SVC
+    JOB_CRUD --&gt; JOB_DB
+    SEARCH_SVC --&gt; SEARCH_INDEX
+
+    %% AI service internal
+    AIS --&gt; NLP_SVC
+    AIS --&gt; ML_SVC
+    AIS --&gt; EMBEDDING_SVC
+    AIS --&gt; CHAT_SVC
+    ML_SVC --&gt; MODEL_STORE
+    EMBEDDING_SVC --&gt; VECTOR_DB
+
+    %% Message queue connections
+    US --&gt; MQ
+    CVS --&gt; MQ
+    JS_SVC --&gt; MQ
+    AIS --&gt; MQ
+    MQ --&gt; EVENTS
+    EVENTS --&gt; WORKERS
+
+    %% Monitoring connections
+    US --&gt; METRICS
+    CVS --&gt; LOGS
+    JS_SVC --&gt; TRACES
+    AIS --&gt; ALERTS
+
+    %% Inter-service communication
+    AIS -.-&gt; CVS
+    AIS -.-&gt; JS_SVC
+    CVS -.-&gt; US
+    JS_SVC -.-&gt; US
+
+    %% Styling
+    classDef gateway fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef mesh fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef service fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef ai fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef data fill:#ffebee,stroke:#c62828,stroke-width:2px
+    classDef queue fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef monitoring fill:#fce4ec,stroke:#ad1457,stroke-width:2px
+
+    class AG,AUTH,RATE,PROXY gateway
+    class SM,LB,CIRCUIT,RETRY mesh
+    class US,CVS,JS_SVC,AUTH_SVC,PROFILE_SVC,PREF_SVC,RBAC,CV_CRUD,TEMPLATE_SVC,PDF_GEN,VERSION,JOB_CRUD,SEARCH_SVC,GEO_SVC,SCRAPER_SVC service
+    class AIS,NLP_SVC,ML_SVC,EMBEDDING_SVC,CHAT_SVC ai
+    class USER_DB,SESSION_CACHE,CV_DB,FILE_STORAGE,JOB_DB,SEARCH_INDEX,MODEL_STORE,VECTOR_DB data
+    class MQ,EVENTS,WORKERS queue
+    class METRICS,LOGS,TRACES,ALERTS monitoring</code></pre>
+<h2 id="data-architecture">Data Architecture</h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "Application Layer"
+        WEB[Web Application]
+        API[API Services]
+        WORKER[Background Workers]
+    end
+
+    subgraph "Data Access Layer"
+        ORM[ORM/ODM&lt;br/&gt;Mongoose, Prisma]
+        QUERY[Query Builder]
+        CONN[Connection Pool]
+        CACHE_LAYER[Cache Layer]
+    end
+
+    subgraph "Primary Storage"
+        subgraph "MongoDB Cluster"
+            MONGO_PRIMARY[(MongoDB Primary)]
+            MONGO_SECONDARY[(MongoDB Secondary)]
+            MONGO_ARBITER[(MongoDB Arbiter)]
+        end
+
+        subgraph "MongoDB Collections"
+            USERS_COLL[Users Collection]
+            CVS_COLL[CVs Collection]
+            JOBS_COLL[Jobs Collection]
+            APPS_COLL[Applications Collection]
+            COMPANIES_COLL[Companies Collection]
+        end
+    end
+
+    subgraph "Analytics Storage"
+        subgraph "PostgreSQL Cluster"
+            PG_PRIMARY[(PostgreSQL Primary)]
+            PG_REPLICA[(PostgreSQL Read Replica)]
+        end
+
+        subgraph "Analytics Tables"
+            USER_EVENTS[User Events]
+            JOB_ANALYTICS[Job Analytics]
+            APP_ANALYTICS[Application Analytics]
+            SEARCH_ANALYTICS[Search Analytics]
+            AI_METRICS[AI Metrics]
+        end
+    end
+
+    subgraph "Caching Layer"
+        subgraph "Redis Cluster"
+            REDIS_MASTER[(Redis Master)]
+            REDIS_SLAVE[(Redis Slave)]
+        end
+
+        subgraph "Cache Types"
+            SESSION_CACHE[Session Cache]
+            API_CACHE[API Response Cache]
+            QUERY_CACHE[Query Result Cache]
+            JOB_QUEUE[Job Queue]
+        end
+    end
+
+    subgraph "File Storage"
+        subgraph "AWS S3"
+            CV_BUCKET[CV Documents Bucket]
+            ASSET_BUCKET[Assets Bucket]
+            BACKUP_BUCKET[Backup Bucket]
+        end
+
+        subgraph "CDN"
+            CLOUDFRONT[CloudFront CDN]
+        end
+    end
+
+    subgraph "Search &amp; Analytics"
+        ELASTICSEARCH[(Elasticsearch)]
+        KIBANA[Kibana Dashboard]
+        LOGSTASH[Logstash]
+    end
+
+    subgraph "Vector Database"
+        CHROMA[(ChromaDB)]
+        EMBEDDINGS[Job/CV Embeddings]
+        SIMILARITY[Similarity Search]
+    end
+
+    subgraph "Data Pipeline"
+        ETL[ETL Processes]
+        STREAM[Stream Processing]
+        BATCH[Batch Processing]
+        SCHEDULER[Data Scheduler]
+    end
+
+    subgraph "Backup &amp; Recovery"
+        MONGO_BACKUP[MongoDB Backup]
+        PG_BACKUP[PostgreSQL Backup]
+        SNAPSHOT[S3 Snapshots]
+        DISASTER_RECOVERY[Disaster Recovery]
+    end
+
+    %% Application to Data Access
+    WEB --&gt; ORM
+    API --&gt; ORM
+    WORKER --&gt; QUERY
+    ORM --&gt; CONN
+    QUERY --&gt; CACHE_LAYER
+
+    %% Data Access to Storage
+    CONN --&gt; MONGO_PRIMARY
+    CONN --&gt; PG_PRIMARY
+    CACHE_LAYER --&gt; REDIS_MASTER
+
+    %% MongoDB replication
+    MONGO_PRIMARY --&gt; MONGO_SECONDARY
+    MONGO_PRIMARY --&gt; MONGO_ARBITER
+
+    %% MongoDB collections
+    MONGO_PRIMARY --&gt; USERS_COLL
+    MONGO_PRIMARY --&gt; CVS_COLL
+    MONGO_PRIMARY --&gt; JOBS_COLL
+    MONGO_PRIMARY --&gt; APPS_COLL
+    MONGO_PRIMARY --&gt; COMPANIES_COLL
+
+    %% PostgreSQL replication
+    PG_PRIMARY --&gt; PG_REPLICA
+
+    %% Analytics tables
+    PG_PRIMARY --&gt; USER_EVENTS
+    PG_PRIMARY --&gt; JOB_ANALYTICS
+    PG_PRIMARY --&gt; APP_ANALYTICS
+    PG_PRIMARY --&gt; SEARCH_ANALYTICS
+    PG_PRIMARY --&gt; AI_METRICS
+
+    %% Redis replication
+    REDIS_MASTER --&gt; REDIS_SLAVE
+
+    %% Cache types
+    REDIS_MASTER --&gt; SESSION_CACHE
+    REDIS_MASTER --&gt; API_CACHE
+    REDIS_MASTER --&gt; QUERY_CACHE
+    REDIS_MASTER --&gt; JOB_QUEUE
+
+    %% File storage
+    API --&gt; CV_BUCKET
+    API --&gt; ASSET_BUCKET
+    CV_BUCKET --&gt; CLOUDFRONT
+    ASSET_BUCKET --&gt; CLOUDFRONT
+
+    %% Search and analytics
+    MONGO_PRIMARY --&gt; ELASTICSEARCH
+    PG_PRIMARY --&gt; LOGSTASH
+    LOGSTASH --&gt; ELASTICSEARCH
+    ELASTICSEARCH --&gt; KIBANA
+
+    %% Vector database
+    API --&gt; CHROMA
+    CHROMA --&gt; EMBEDDINGS
+    CHROMA --&gt; SIMILARITY
+
+    %% Data pipeline
+    MONGO_PRIMARY --&gt; ETL
+    PG_PRIMARY --&gt; STREAM
+    ETL --&gt; BATCH
+    BATCH --&gt; SCHEDULER
+
+    %% Backup and recovery
+    MONGO_PRIMARY --&gt; MONGO_BACKUP
+    PG_PRIMARY --&gt; PG_BACKUP
+    CV_BUCKET --&gt; SNAPSHOT
+    MONGO_BACKUP --&gt; DISASTER_RECOVERY
+
+    %% Styling
+    classDef app fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef access fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef primary fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef analytics fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef cache fill:#ffebee,stroke:#c62828,stroke-width:2px
+    classDef storage fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef search fill:#fce4ec,stroke:#ad1457,stroke-width:2px
+    classDef vector fill:#e8eaf6,stroke:#3f51b5,stroke-width:2px
+    classDef pipeline fill:#f9f9f9,stroke:#757575,stroke-width:2px
+
+    class WEB,API,WORKER app
+    class ORM,QUERY,CONN,CACHE_LAYER access
+    class MONGO_PRIMARY,MONGO_SECONDARY,MONGO_ARBITER,USERS_COLL,CVS_COLL,JOBS_COLL,APPS_COLL,COMPANIES_COLL primary
+    class PG_PRIMARY,PG_REPLICA,USER_EVENTS,JOB_ANALYTICS,APP_ANALYTICS,SEARCH_ANALYTICS,AI_METRICS analytics
+    class REDIS_MASTER,REDIS_SLAVE,SESSION_CACHE,API_CACHE,QUERY_CACHE,JOB_QUEUE cache
+    class CV_BUCKET,ASSET_BUCKET,BACKUP_BUCKET,CLOUDFRONT storage
+    class ELASTICSEARCH,KIBANA,LOGSTASH search
+    class CHROMA,EMBEDDINGS,SIMILARITY vector
+    class ETL,STREAM,BATCH,SCHEDULER,MONGO_BACKUP,PG_BACKUP,SNAPSHOT,DISASTER_RECOVERY pipeline</code></pre>
+<h2 id="security-architecture">Security Architecture</h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "External Threats"
+        ATTACKER[Malicious Actors]
+        BOT[Automated Bots]
+        DDOS[DDoS Attacks]
+    end
+
+    subgraph "Perimeter Security"
+        WAF[Web Application Firewall]
+        DDOS_PROTECTION[DDoS Protection]
+        CDN_SECURITY[CDN Security Features]
+    end
+
+    subgraph "Network Security"
+        VPC[Virtual Private Cloud]
+        SUBNETS[Private/Public Subnets]
+        NAT[NAT Gateway]
+        IGW[Internet Gateway]
+        SECURITY_GROUPS[Security Groups]
+        NACL[Network ACLs]
+    end
+
+    subgraph "Application Security"
+        subgraph "API Gateway Security"
+            RATE_LIMITING[Rate Limiting]
+            IP_WHITELIST[IP Whitelisting]
+            API_KEYS[API Key Management]
+            REQUEST_VALIDATION[Request Validation]
+        end
+
+        subgraph "Authentication &amp; Authorization"
+            JWT_AUTH[JWT Authentication]
+            OAUTH[OAuth 2.0/OIDC]
+            MFA[Multi-Factor Authentication]
+            RBAC_SECURITY[Role-Based Access Control]
+            SESSION_MGT[Session Management]
+        end
+
+        subgraph "Data Security"
+            ENCRYPTION_TRANSIT[Encryption in Transit]
+            ENCRYPTION_REST[Encryption at Rest]
+            KEY_MGMT[Key Management Service]
+            DATA_MASKING[Data Masking]
+            PII_PROTECTION[PII Protection]
+        end
+    end
+
+    subgraph "Infrastructure Security"
+        subgraph "Container Security"
+            IMAGE_SCANNING[Container Image Scanning]
+            RUNTIME_SECURITY[Runtime Security]
+            VULNERABILITY_MGMT[Vulnerability Management]
+        end
+
+        subgraph "Kubernetes Security"
+            RBAC_K8S[Kubernetes RBAC]
+            NETWORK_POLICIES[Network Policies]
+            POD_SECURITY[Pod Security Standards]
+            SECRETS_MGMT[Secrets Management]
+        end
+
+        subgraph "Database Security"
+            DB_ENCRYPTION[Database Encryption]
+            ACCESS_CONTROL[Database Access Control]
+            AUDIT_LOGGING[Audit Logging]
+            BACKUP_ENCRYPTION[Backup Encryption]
+        end
+    end
+
+    subgraph "Monitoring &amp; Compliance"
+        SIEM[Security Information and Event Management]
+        VULNERABILITY_SCAN[Vulnerability Scanning]
+        COMPLIANCE_MONITORING[Compliance Monitoring]
+        INCIDENT_RESPONSE[Incident Response]
+        THREAT_INTELLIGENCE[Threat Intelligence]
+    end
+
+    subgraph "Data Privacy &amp; Compliance"
+        GDPR_COMPLIANCE[GDPR Compliance]
+        CCPA_COMPLIANCE[CCPA Compliance]
+        DATA_RETENTION[Data Retention Policies]
+        RIGHT_TO_ERASURE[Right to Erasure]
+        CONSENT_MGT[Consent Management]
+    end
+
+    %% Threat flow
+    ATTACKER --&gt; WAF
+    BOT --&gt; DDOS_PROTECTION
+    DDOS --&gt; CDN_SECURITY
+
+    %% Perimeter to Network
+    WAF --&gt; VPC
+    DDOS_PROTECTION --&gt; SECURITY_GROUPS
+    CDN_SECURITY --&gt; IGW
+
+    %% Network security flow
+    IGW --&gt; SUBNETS
+    SUBNETS --&gt; NAT
+    SECURITY_GROUPS --&gt; NACL
+
+    %% Application security
+    SUBNETS --&gt; RATE_LIMITING
+    RATE_LIMITING --&gt; JWT_AUTH
+    JWT_AUTH --&gt; ENCRYPTION_TRANSIT
+
+    %% Authentication flow
+    JWT_AUTH --&gt; OAUTH
+    OAUTH --&gt; MFA
+    MFA --&gt; RBAC_SECURITY
+    RBAC_SECURITY --&gt; SESSION_MGT
+
+    %% Data security
+    ENCRYPTION_TRANSIT --&gt; ENCRYPTION_REST
+    ENCRYPTION_REST --&gt; KEY_MGMT
+    KEY_MGMT --&gt; DATA_MASKING
+    DATA_MASKING --&gt; PII_PROTECTION
+
+    %% Infrastructure security
+    SUBNETS --&gt; IMAGE_SCANNING
+    IMAGE_SCANNING --&gt; RBAC_K8S
+    RBAC_K8S --&gt; DB_ENCRYPTION
+
+    %% Container to K8s security
+    IMAGE_SCANNING --&gt; RUNTIME_SECURITY
+    RUNTIME_SECURITY --&gt; VULNERABILITY_MGMT
+    RBAC_K8S --&gt; NETWORK_POLICIES
+    NETWORK_POLICIES --&gt; POD_SECURITY
+    POD_SECURITY --&gt; SECRETS_MGMT
+
+    %% Database security
+    DB_ENCRYPTION --&gt; ACCESS_CONTROL
+    ACCESS_CONTROL --&gt; AUDIT_LOGGING
+    AUDIT_LOGGING --&gt; BACKUP_ENCRYPTION
+
+    %% Monitoring
+    RBAC_SECURITY --&gt; SIEM
+    AUDIT_LOGGING --&gt; VULNERABILITY_SCAN
+    VULNERABILITY_SCAN --&gt; COMPLIANCE_MONITORING
+    COMPLIANCE_MONITORING --&gt; INCIDENT_RESPONSE
+    INCIDENT_RESPONSE --&gt; THREAT_INTELLIGENCE
+
+    %% Compliance
+    PII_PROTECTION --&gt; GDPR_COMPLIANCE
+    GDPR_COMPLIANCE --&gt; CCPA_COMPLIANCE
+    CCPA_COMPLIANCE --&gt; DATA_RETENTION
+    DATA_RETENTION --&gt; RIGHT_TO_ERASURE
+    RIGHT_TO_ERASURE --&gt; CONSENT_MGT
+
+    %% Styling
+    classDef threat fill:#ffebee,stroke:#f44336,stroke-width:2px
+    classDef perimeter fill:#fff3e0,stroke:#ff9800,stroke-width:2px
+    classDef network fill:#e3f2fd,stroke:#2196f3,stroke-width:2px
+    classDef application fill:#e8f5e8,stroke:#4caf50,stroke-width:2px
+    classDef infrastructure fill:#f3e5f5,stroke:#9c27b0,stroke-width:2px
+    classDef monitoring fill:#e0f2f1,stroke:#009688,stroke-width:2px
+    classDef compliance fill:#fce4ec,stroke:#e91e63,stroke-width:2px
+
+    class ATTACKER,BOT,DDOS threat
+    class WAF,DDOS_PROTECTION,CDN_SECURITY perimeter
+    class VPC,SUBNETS,NAT,IGW,SECURITY_GROUPS,NACL network
+    class RATE_LIMITING,IP_WHITELIST,API_KEYS,REQUEST_VALIDATION,JWT_AUTH,OAUTH,MFA,RBAC_SECURITY,SESSION_MGT,ENCRYPTION_TRANSIT,ENCRYPTION_REST,KEY_MGMT,DATA_MASKING,PII_PROTECTION application
+    class IMAGE_SCANNING,RUNTIME_SECURITY,VULNERABILITY_MGMT,RBAC_K8S,NETWORK_POLICIES,POD_SECURITY,SECRETS_MGMT,DB_ENCRYPTION,ACCESS_CONTROL,AUDIT_LOGGING,BACKUP_ENCRYPTION infrastructure
+    class SIEM,VULNERABILITY_SCAN,COMPLIANCE_MONITORING,INCIDENT_RESPONSE,THREAT_INTELLIGENCE monitoring
+    class GDPR_COMPLIANCE,CCPA_COMPLIANCE,DATA_RETENTION,RIGHT_TO_ERASURE,CONSENT_MGT compliance</code></pre>
+<h2 id="deployment-architecture">Deployment Architecture</h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "Multi-Cloud Infrastructure"
+        subgraph "AWS (Primary)"
+            subgraph "Production Environment"
+                AWS_PROD_VPC[Production VPC]
+                AWS_EKS_PROD[EKS Cluster - Production]
+                AWS_RDS_PROD[RDS - Production]
+                AWS_S3_PROD[S3 - Production]
+                AWS_REDIS_PROD[ElastiCache - Production]
+            end
+
+            subgraph "Staging Environment"
+                AWS_STAGING_VPC[Staging VPC]
+                AWS_EKS_STAGING[EKS Cluster - Staging]
+                AWS_RDS_STAGING[RDS - Staging]
+                AWS_S3_STAGING[S3 - Staging]
+            end
+
+            subgraph "Development Environment"
+                AWS_DEV_VPC[Development VPC]
+                AWS_EKS_DEV[EKS Cluster - Development]
+                AWS_RDS_DEV[RDS - Development]
+            end
+        end
+
+        subgraph "GCP (Disaster Recovery)"
+            GCP_VPC[GCP VPC]
+            GKE_DR[GKE Cluster - DR]
+            CLOUD_SQL_DR[Cloud SQL - DR]
+            GCS_DR[Cloud Storage - DR]
+        end
+    end
+
+    subgraph "Container Orchestration"
+        subgraph "Kubernetes Production"
+            K8S_INGRESS[Ingress Controller]
+            K8S_SERVICES[Kubernetes Services]
+            K8S_DEPLOYMENTS[Application Deployments]
+            K8S_CONFIGS[ConfigMaps &amp; Secrets]
+            K8S_STORAGE[Persistent Volumes]
+        end
+
+        subgraph "Service Mesh"
+            ISTIO[Istio Service Mesh]
+            ENVOY[Envoy Proxies]
+            CIRCUIT_BREAKER[Circuit Breakers]
+            LOAD_BALANCER[Load Balancing]
+        end
+    end
+
+    subgraph "CI/CD Pipeline"
+        subgraph "Source Control"
+            GITHUB[GitHub Repository]
+            FEATURE_BRANCHES[Feature Branches]
+            MAIN_BRANCH[Main Branch]
+        end
+
+        subgraph "Build Pipeline"
+            GITHUB_ACTIONS[GitHub Actions]
+            BUILD_STAGE[Build &amp; Test]
+            SECURITY_SCAN[Security Scanning]
+            IMAGE_BUILD[Container Image Build]
+            IMAGE_REGISTRY[Container Registry]
+        end
+
+        subgraph "Deployment Pipeline"
+            HELM[Helm Charts]
+            ARGOCD[ArgoCD]
+            CANARY[Canary Deployments]
+            BLUE_GREEN[Blue-Green Deployments]
+        end
+    end
+
+    subgraph "Monitoring &amp; Observability"
+        subgraph "Metrics &amp; Monitoring"
+            PROMETHEUS[Prometheus]
+            GRAFANA[Grafana Dashboards]
+            ALERTMANAGER[Alert Manager]
+        end
+
+        subgraph "Logging"
+            FLUENTD[Fluentd]
+            ELASTICSEARCH_LOG[Elasticsearch]
+            KIBANA_LOG[Kibana]
+        end
+
+        subgraph "Tracing"
+            JAEGER[Jaeger Tracing]
+            ZIPKIN[Zipkin]
+        end
+
+        subgraph "Error Tracking"
+            SENTRY[Sentry]
+            ERROR_ALERTING[Error Alerting]
+        end
+    end
+
+    subgraph "Traffic Management"
+        subgraph "Global Load Balancing"
+            CLOUDFLARE[Cloudflare]
+            CDN_EDGE[Edge Locations]
+            WAF_GLOBAL[Global WAF]
+        end
+
+        subgraph "Regional Load Balancing"
+            ALB_AWS[AWS Application LB]
+            NLB_AWS[AWS Network LB]
+            GLB_GCP[GCP Global LB]
+        end
+    end
+
+    subgraph "Security &amp; Compliance"
+        subgraph "Certificate Management"
+            CERT_MANAGER[Cert Manager]
+            SSL_CERTS[SSL Certificates]
+            AUTO_RENEWAL[Auto Renewal]
+        end
+
+        subgraph "Secrets Management"
+            AWS_SECRETS[AWS Secrets Manager]
+            K8S_SECRETS[Kubernetes Secrets]
+            VAULT[HashiCorp Vault]
+        end
+
+        subgraph "Security Scanning"
+            CONTAINER_SCAN[Container Scanning]
+            VULNERABILITY_SCAN_DEPLOY[Vulnerability Scanning]
+            COMPLIANCE_CHECK[Compliance Checking]
+        end
+    end
+
+    %% Infrastructure connections
+    AWS_EKS_PROD --&gt; K8S_SERVICES
+    AWS_EKS_STAGING --&gt; K8S_SERVICES
+    GKE_DR --&gt; K8S_SERVICES
+
+    %% Container orchestration
+    K8S_INGRESS --&gt; K8S_SERVICES
+    K8S_SERVICES --&gt; K8S_DEPLOYMENTS
+    K8S_DEPLOYMENTS --&gt; K8S_CONFIGS
+    K8S_DEPLOYMENTS --&gt; K8S_STORAGE
+
+    %% Service mesh
+    K8S_SERVICES --&gt; ISTIO
+    ISTIO --&gt; ENVOY
+    ENVOY --&gt; CIRCUIT_BREAKER
+    CIRCUIT_BREAKER --&gt; LOAD_BALANCER
+
+    %% CI/CD flow
+    FEATURE_BRANCHES --&gt; MAIN_BRANCH
+    MAIN_BRANCH --&gt; GITHUB_ACTIONS
+    GITHUB_ACTIONS --&gt; BUILD_STAGE
+    BUILD_STAGE --&gt; SECURITY_SCAN
+    SECURITY_SCAN --&gt; IMAGE_BUILD
+    IMAGE_BUILD --&gt; IMAGE_REGISTRY
+    IMAGE_REGISTRY --&gt; HELM
+    HELM --&gt; ARGOCD
+    ARGOCD --&gt; CANARY
+    CANARY --&gt; BLUE_GREEN
+
+    %% Deployment targets
+    ARGOCD --&gt; AWS_EKS_PROD
+    ARGOCD --&gt; AWS_EKS_STAGING
+    ARGOCD --&gt; GKE_DR
+
+    %% Monitoring connections
+    K8S_DEPLOYMENTS --&gt; PROMETHEUS
+    PROMETHEUS --&gt; GRAFANA
+    PROMETHEUS --&gt; ALERTMANAGER
+    K8S_DEPLOYMENTS --&gt; FLUENTD
+    FLUENTD --&gt; ELASTICSEARCH_LOG
+    ELASTICSEARCH_LOG --&gt; KIBANA_LOG
+    K8S_DEPLOYMENTS --&gt; JAEGER
+    K8S_DEPLOYMENTS --&gt; SENTRY
+
+    %% Traffic management
+    CLOUDFLARE --&gt; CDN_EDGE
+    CDN_EDGE --&gt; ALB_AWS
+    ALB_AWS --&gt; K8S_INGRESS
+    GLB_GCP --&gt; GKE_DR
+
+    %% Security
+    K8S_CONFIGS --&gt; CERT_MANAGER
+    CERT_MANAGER --&gt; SSL_CERTS
+    K8S_SECRETS --&gt; AWS_SECRETS
+    AWS_SECRETS --&gt; VAULT
+    IMAGE_BUILD --&gt; CONTAINER_SCAN
+
+    %% Styling
+    classDef aws fill:#ff9900,stroke:#232f3e,stroke-width:2px,color:#fff
+    classDef gcp fill:#4285f4,stroke:#1a73e8,stroke-width:2px,color:#fff
+    classDef k8s fill:#326ce5,stroke:#ffffff,stroke-width:2px,color:#fff
+    classDef cicd fill:#28a745,stroke:#1e7e34,stroke-width:2px,color:#fff
+    classDef monitoring fill:#dc3545,stroke:#c82333,stroke-width:2px,color:#fff
+    classDef traffic fill:#17a2b8,stroke:#138496,stroke-width:2px,color:#fff
+    classDef security fill:#6f42c1,stroke:#59359a,stroke-width:2px,color:#fff
+
+    class AWS_PROD_VPC,AWS_EKS_PROD,AWS_RDS_PROD,AWS_S3_PROD,AWS_REDIS_PROD,AWS_STAGING_VPC,AWS_EKS_STAGING,AWS_RDS_STAGING,AWS_S3_STAGING,AWS_DEV_VPC,AWS_EKS_DEV,AWS_RDS_DEV,ALB_AWS,NLB_AWS,AWS_SECRETS aws
+    class GCP_VPC,GKE_DR,CLOUD_SQL_DR,GCS_DR,GLB_GCP gcp
+    class K8S_INGRESS,K8S_SERVICES,K8S_DEPLOYMENTS,K8S_CONFIGS,K8S_STORAGE,ISTIO,ENVOY,CIRCUIT_BREAKER,LOAD_BALANCER k8s
+    class GITHUB,FEATURE_BRANCHES,MAIN_BRANCH,GITHUB_ACTIONS,BUILD_STAGE,SECURITY_SCAN,IMAGE_BUILD,IMAGE_REGISTRY,HELM,ARGOCD,CANARY,BLUE_GREEN cicd
+    class PROMETHEUS,GRAFANA,ALERTMANAGER,FLUENTD,ELASTICSEARCH_LOG,KIBANA_LOG,JAEGER,ZIPKIN,SENTRY,ERROR_ALERTING monitoring
+    class CLOUDFLARE,CDN_EDGE,WAF_GLOBAL traffic
+    class CERT_MANAGER,SSL_CERTS,AUTO_RENEWAL,K8S_SECRETS,VAULT,CONTAINER_SCAN,VULNERABILITY_SCAN_DEPLOY,COMPLIANCE_CHECK security</code></pre>
+<h2 id="network-architecture">Network Architecture</h2>
+<pre class="mermaid"><code>graph TB
+    subgraph "Internet"
+        USERS[End Users]
+        INTERNET[Internet]
+    end
+
+    subgraph "Edge &amp; CDN Layer"
+        CLOUDFLARE[Cloudflare Global Network]
+        EDGE_LOCATIONS[Edge Locations Worldwide]
+        WAF_EDGE[Edge WAF]
+        DDOS_PROTECTION[DDoS Protection]
+    end
+
+    subgraph "AWS Primary Region (us-east-1)"
+        subgraph "Production VPC (10.0.0.0/16)"
+            subgraph "Public Subnets"
+                PUBLIC_1A[Public Subnet AZ-1a&lt;br/&gt;10.0.1.0/24]
+                PUBLIC_1B[Public Subnet AZ-1b&lt;br/&gt;10.0.2.0/24]
+                PUBLIC_1C[Public Subnet AZ-1c&lt;br/&gt;10.0.3.0/24]
+
+                ALB[Application Load Balancer]
+                NAT_1A[NAT Gateway AZ-1a]
+                NAT_1B[NAT Gateway AZ-1b]
+                NAT_1C[NAT Gateway AZ-1c]
+            end
+
+            subgraph "Private Subnets - App Tier"
+                PRIVATE_APP_1A[Private App AZ-1a&lt;br/&gt;10.0.11.0/24]
+                PRIVATE_APP_1B[Private App AZ-1b&lt;br/&gt;10.0.12.0/24]
+                PRIVATE_APP_1C[Private App AZ-1c&lt;br/&gt;10.0.13.0/24]
+
+                EKS_NODES[EKS Worker Nodes]
+                APP_SERVERS[Application Servers]
+            end
+
+            subgraph "Private Subnets - Data Tier"
+                PRIVATE_DB_1A[Private DB AZ-1a&lt;br/&gt;10.0.21.0/24]
+                PRIVATE_DB_1B[Private DB AZ-1b&lt;br/&gt;10.0.22.0/24]
+                PRIVATE_DB_1C[Private DB AZ-1c&lt;br/&gt;10.0.23.0/24]
+
+                RDS_CLUSTER[RDS MongoDB Cluster]
+                REDIS_CLUSTER[ElastiCache Redis]
+            end
+
+            IGW[Internet Gateway]
+            VPC_ENDPOINT[VPC Endpoints]
+        end
+
+        subgraph "Staging VPC (10.1.0.0/16)"
+            STAGING_SUBNETS[Staging Subnets]
+            STAGING_EKS[Staging EKS]
+            STAGING_DB[Staging Databases]
+        end
+    end
+
+    subgraph "AWS Secondary Region (us-west-2)"
+        subgraph "DR VPC (10.2.0.0/16)"
+            DR_SUBNETS[DR Subnets]
+            DR_EKS[DR EKS Cluster]
+            DR_DB[DR Databases]
+        end
+    end
+
+    subgraph "GCP Region (us-central1)"
+        subgraph "GCP VPC (10.3.0.0/16)"
+            GCP_SUBNETS[GCP Subnets]
+            GKE_CLUSTER[GKE Cluster]
+            CLOUD_SQL[Cloud SQL]
+        end
+    end
+
+    subgraph "Network Security"
+        subgraph "Security Groups"
+            WEB_SG[Web Security Group&lt;br/&gt;Port 80, 443]
+            APP_SG[App Security Group&lt;br/&gt;Port 3000-8000]
+            DB_SG[DB Security Group&lt;br/&gt;Port 27017, 5432, 6379]
+        end
+
+        subgraph "Network ACLs"
+            PUBLIC_NACL[Public Subnet NACL]
+            PRIVATE_NACL[Private Subnet NACL]
+        end
+
+        subgraph "VPN &amp; Private Connectivity"
+            VPN_GW[VPN Gateway]
+            DIRECT_CONNECT[AWS Direct Connect]
+            PRIVATE_LINK[AWS PrivateLink]
+        end
+    end
+
+    subgraph "Service Mesh Networking"
+        ISTIO_INGRESS[Istio Ingress Gateway]
+        ISTIO_EGRESS[Istio Egress Gateway]
+        SIDECAR_PROXIES[Envoy Sidecar Proxies]
+        MESH_POLICIES[Network Policies]
+    end
+
+    subgraph "DNS &amp; Service Discovery"
+        ROUTE53[Route 53]
+        PRIVATE_DNS[Private DNS Zones]
+        SERVICE_DISCOVERY[Kubernetes Service Discovery]
+        CONSUL[Consul Service Mesh]
+    end
+
+    subgraph "Monitoring &amp; Observability"
+        NETWORK_MONITORING[Network Monitoring]
+        FLOW_LOGS[VPC Flow Logs]
+        TRAFFIC_ANALYSIS[Traffic Analysis]
+        LATENCY_MONITORING[Latency Monitoring]
+    end
+
+    %% User traffic flow
+    USERS --&gt; INTERNET
+    INTERNET --&gt; CLOUDFLARE
+    CLOUDFLARE --&gt; EDGE_LOCATIONS
+    EDGE_LOCATIONS --&gt; WAF_EDGE
+    WAF_EDGE --&gt; DDOS_PROTECTION
+
+    %% Edge to AWS
+    DDOS_PROTECTION --&gt; IGW
+    IGW --&gt; ALB
+    ALB --&gt; PUBLIC_1A
+    ALB --&gt; PUBLIC_1B
+    ALB --&gt; PUBLIC_1C
+
+    %% Public to Private routing
+    PUBLIC_1A --&gt; NAT_1A
+    PUBLIC_1B --&gt; NAT_1B
+    PUBLIC_1C --&gt; NAT_1C
+
+    NAT_1A --&gt; PRIVATE_APP_1A
+    NAT_1B --&gt; PRIVATE_APP_1B
+    NAT_1C --&gt; PRIVATE_APP_1C
+
+    %% App to Data tier
+    PRIVATE_APP_1A --&gt; PRIVATE_DB_1A
+    PRIVATE_APP_1B --&gt; PRIVATE_DB_1B
+    PRIVATE_APP_1C --&gt; PRIVATE_DB_1C
+
+    %% EKS and databases
+    PRIVATE_APP_1A --&gt; EKS_NODES
+    PRIVATE_APP_1B --&gt; APP_SERVERS
+    PRIVATE_DB_1A --&gt; RDS_CLUSTER
+    PRIVATE_DB_1B --&gt; REDIS_CLUSTER
+
+    %% Security group assignments
+    ALB --&gt; WEB_SG
+    EKS_NODES --&gt; APP_SG
+    RDS_CLUSTER --&gt; DB_SG
+
+    %% Network ACLs
+    PUBLIC_1A --&gt; PUBLIC_NACL
+    PRIVATE_APP_1A --&gt; PRIVATE_NACL
+
+    %% Cross-region connectivity
+    RDS_CLUSTER -.-&gt; DR_DB
+    EKS_NODES -.-&gt; DR_EKS
+
+    %% Multi-cloud connectivity
+    DR_EKS -.-&gt; GKE_CLUSTER
+    DR_DB -.-&gt; CLOUD_SQL
+
+    %% Service mesh
+    EKS_NODES --&gt; ISTIO_INGRESS
+    ISTIO_INGRESS --&gt; SIDECAR_PROXIES
+    SIDECAR_PROXIES --&gt; ISTIO_EGRESS
+
+    %% DNS and service discovery
+    ALB --&gt; ROUTE53
+    EKS_NODES --&gt; SERVICE_DISCOVERY
+    SERVICE_DISCOVERY --&gt; CONSUL
+
+    %% VPC endpoints
+    PRIVATE_APP_1A --&gt; VPC_ENDPOINT
+    VPC_ENDPOINT --&gt; PRIVATE_LINK
+
+    %% Monitoring
+    EKS_NODES --&gt; NETWORK_MONITORING
+    ALB --&gt; FLOW_LOGS
+    SIDECAR_PROXIES --&gt; TRAFFIC_ANALYSIS
+
+    %% Styling
+    classDef internet fill:#e3f2fd,stroke:#1976d2,stroke-width:2px
+    classDef edge fill:#fff3e0,stroke:#f57c00,stroke-width:2px
+    classDef public fill:#e8f5e8,stroke:#388e3c,stroke-width:2px
+    classDef private fill:#f3e5f5,stroke:#7b1fa2,stroke-width:2px
+    classDef database fill:#ffebee,stroke:#c62828,stroke-width:2px
+    classDef security fill:#e0f2f1,stroke:#00695c,stroke-width:2px
+    classDef mesh fill:#fce4ec,stroke:#ad1457,stroke-width:2px
+    classDef monitoring fill:#f9f9f9,stroke:#757575,stroke-width:2px
+
+    class USERS,INTERNET internet
+    class CLOUDFLARE,EDGE_LOCATIONS,WAF_EDGE,DDOS_PROTECTION edge
+    class PUBLIC_1A,PUBLIC_1B,PUBLIC_1C,ALB,NAT_1A,NAT_1B,NAT_1C,IGW public
+    class PRIVATE_APP_1A,PRIVATE_APP_1B,PRIVATE_APP_1C,EKS_NODES,APP_SERVERS private
+    class PRIVATE_DB_1A,PRIVATE_DB_1B,PRIVATE_DB_1C,RDS_CLUSTER,REDIS_CLUSTER database
+    class WEB_SG,APP_SG,DB_SG,PUBLIC_NACL,PRIVATE_NACL,VPN_GW,DIRECT_CONNECT,PRIVATE_LINK security
+    class ISTIO_INGRESS,ISTIO_EGRESS,SIDECAR_PROXIES,MESH_POLICIES,ROUTE53,SERVICE_DISCOVERY,CONSUL mesh
+    class NETWORK_MONITORING,FLOW_LOGS,TRAFFIC_ANALYSIS,LATENCY_MONITORING monitoring</code></pre>
+<p>This comprehensive architecture documentation provides detailed visual representations of the AI-Powered Job Seeker Platform's system design, covering all aspects from high-level architecture to detailed network topology, enabling proper understanding, implementation, and maintenance of the platform.</p>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2025 AI-legend
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/AI-legend/Job-Portal-Doc" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2" fill="currentColor"></path></svg>
+</a>
+<a class="md-social__link" href="https://linkedin.com/in/your-profile" rel="noopener" target="_blank" title="linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z" fill="currentColor"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.path", "navigation.top", "search.highlight", "search.share", "toc.follow", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+<script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+</body>
+</html>
