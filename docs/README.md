@@ -101,12 +101,44 @@ hr-agent/
 └── tests/              # Test suites
 ```
 
-## 🔗 Related Documentation
+## � Documentation Navigation
 
-- [Architecture Documentation](architecture/README.md)
-- [API Documentation](api/README.md)
-- [Deployment Guide](deployment/README.md)
-- [Development Setup](development/README.md)
+### 🏗️ [Architecture](architecture/README.md)
+System design, frontend, backend, and workflow architecture
+- [Frontend Architecture](architecture/frontend.md) - React/Next.js components and state management
+- [Backend Architecture](architecture/backend.md) - Microservices and API design  
+- [Workflow Architecture](architecture/workflow.md) - n8n automation and job processing
+
+### 🔌 [API Documentation](api/README.md)
+Complete API reference with authentication and endpoints
+- RESTful API design patterns
+- Authentication and authorization flows
+- Request/response schemas and examples
+
+### 🚀 [Deployment](deployment/README.md)
+Multi-cloud deployment strategy with Kubernetes
+- AWS and GCP deployment configurations
+- Docker containerization setup
+- Kubernetes orchestration and scaling
+
+### 💻 [Development](development/README.md)
+Development environment setup and guidelines
+- Local development environment
+- Code standards and best practices
+- Testing strategies and frameworks
+
+### 📊 [Visual Documentation](diagrams/README.md)
+Comprehensive diagrams including DFD, ERD, and workflow diagrams
+- [Data Flow Diagrams](diagrams/data-flow-diagram.md) - System data flow analysis
+- [Entity Relationship Diagrams](diagrams/entity-relationship-diagram.md) - Database schema design
+- [Workflow Diagrams](diagrams/workflow-diagrams.md) - Business process flows
+- [Architecture Diagrams](diagrams/architecture-diagrams.md) - System architecture overview
+
+### 📋 [Project Planning](PROJECT_MILESTONES.md)
+Implementation timeline and technology stack
+- [Technology Stack](TECH_STACK.md) - Complete technology overview
+- Development milestones and roadmap
+- Resource allocation and timeline
 
 ## 📞 Contact
 
