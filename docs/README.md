@@ -103,10 +103,10 @@ hr-agent/
 
 ## 🔗 Related Documentation
 
-- [Architecture Documentation](./docs/architecture/README.md)
-- [API Documentation](./docs/api/README.md)
-- [Deployment Guide](./docs/deployment/README.md)
-- [Development Setup](./docs/development/README.md)
+- [Architecture Documentation](architecture/README.md)
+- [API Documentation](api/README.md)
+- [Deployment Guide](deployment/README.md)
+- [Development Setup](development/README.md)
 
 ## 📞 Contact
 
